@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="桃園市政府衛生局 失智症教育訓練：失智症健康問題辨識與安全照護 互動教學網頁與講義">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+<title>失智照護日和講堂</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap">
+<style>
+/* Layout: 日和式留白 — 一個灑落樹影的米色牆面開場，之後每章「中文襯線大標＋英文斜體副標」置中，內容以寬鬆格線鋪排；全頁單一米色調，低對比。 */
+:root{
+  --paper:#F3EEE5;      /* 主底色：米白牆面 */
+  --paper-2:#EBE4D8;    /* 區塊交替底色 */
+  --card:#F8F5EF;       /* 卡片 */
+  --ink:#5F564D;        /* 主文字（暖灰褐） */
+  --ink-soft:#8D8378;   /* 次要文字 */
+  --line:#DDD4C6;       /* 細線 */
+  --sage:#A2A790;       /* 鼠尾草綠 */
+  --clay:#C3A78C;       /* 陶土 */
+  --rose:#CBB3A7;       /* 灰玫瑰 */
+  --shade:rgba(112,94,74,.10);
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-latin:"Cormorant Garamond","Times New Roman",serif;
+  --measure:40em;
+  --gut-l:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+html.present{font-size:19px}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-weight:400;line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;text-wrap:balance;margin:0;color:var(--ink)}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:1.5px dashed var(--clay);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.latin{font-family:var(--f-latin);font-style:italic;letter-spacing:.04em;color:var(--ink-soft)}
+
+/* ── Top bar ── */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .4s}
+.bar.scrolled{border-bottom-color:var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand-mark{width:34px;height:34px;border:1px solid var(--ink-soft);border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:15px;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.brand-txt b{font-family:var(--f-display);font-weight:500;font-size:16px;letter-spacing:.12em;white-space:nowrap}
+.brand-txt small{font-family:var(--f-latin);font-style:italic;font-size:12px;color:var(--ink-soft);letter-spacing:.12em}
+.bar-tools{margin-left:auto;display:flex;align-items:center;gap:6px}
+.chip-btn{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 14px;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .3s;white-space:nowrap}
+.chip-btn:hover,.chip-btn[aria-pressed="true"]{border-color:var(--clay);color:var(--ink);background:var(--card)}
+.burger{width:42px;height:42px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.burger span{display:block;width:22px;height:1px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:1px;background:var(--ink);transition:transform .4s}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+@media (max-width:560px){.hide-sm{display:none}}
+
+/* ── Full-screen menu (日和式) ── */
+.menu{position:fixed;inset:0;z-index:70;background:var(--paper-2);display:flex;flex-direction:column;justify-content:center;padding:calc(64px + env(safe-area-inset-top,0px)) var(--gut-r) 40px var(--gut-l);opacity:0;pointer-events:none;transition:opacity .5s}
+.menu.open{opacity:1;pointer-events:auto}
+.menu ol{list-style:none;margin:0 auto;padding:0;width:100%;max-width:640px;display:grid;gap:4px}
+.menu a{display:grid;grid-template-columns:3.2em 1fr auto;align-items:baseline;gap:12px;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transform:translateY(10px);opacity:0;transition:transform .6s,opacity .6s,color .3s}
+.menu.open a{transform:none;opacity:1}
+.menu a:hover{color:var(--clay)}
+.menu .no{font-family:var(--f-latin);font-style:italic;font-size:20px;color:var(--ink-soft)}
+.menu .nm{font-family:var(--f-display);font-size:clamp(18px,3.4vw,24px);letter-spacing:.1em}
+.menu .tm{font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.menu-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));border:0;background:transparent;font-size:30px;line-height:1;cursor:pointer;color:var(--ink-soft)}
+
+/* ── Hero ── */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;padding-block:clamp(72px,12vw,150px) clamp(56px,9vw,110px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.hero-eyebrow{font-size:13px;letter-spacing:.32em;color:var(--ink-soft);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,6.4vw,68px);line-height:1.32;letter-spacing:.12em;font-weight:500}
+.hero h1 em{font-style:normal;color:var(--clay)}
+.hero .latin.big{display:block;font-size:clamp(18px,2.4vw,26px);margin-top:18px}
+.hero-lead{margin-top:28px;max-width:30em;color:var(--ink-soft)}
+.hero-meta{display:grid;gap:10px;font-size:14px;color:var(--ink-soft);border-left:1px solid var(--line);padding-left:20px;min-width:0}
+.hero-meta b{display:block;font-weight:500;color:var(--ink);font-size:15px}
+.scroll-cue{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:24px;writing-mode:vertical-rl;font-family:var(--f-latin);font-style:italic;letter-spacing:.3em;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(var(--ink-soft),transparent);animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero .rise{animation:rise 1.4s cubic-bezier(.2,.7,.2,1) both}
+.hero .rise.d2{animation-delay:.25s}.hero .rise.d3{animation-delay:.5s}
+@keyframes rise{from{opacity:.0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero-meta{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.scroll-cue{display:none}}
+
+/* ── Section scaffolding ── */
+section.ch{padding-block:clamp(72px,10vw,120px)}
+section.ch.alt{background:var(--paper-2)}
+.ch-head{text-align:center;margin-bottom:clamp(40px,6vw,64px);display:grid;justify-items:center;gap:6px}
+.ch-no{font-family:var(--f-latin);font-style:italic;font-size:15px;color:var(--ink-soft);letter-spacing:.2em}
+.ch-head h2{font-size:clamp(26px,4vw,38px);letter-spacing:.16em}
+.ch-head .latin{font-size:18px}
+.ch-head .time{font-size:13px;color:var(--ink-soft);letter-spacing:.14em;font-variant-numeric:tabular-nums;margin-top:6px}
+.ch-head .goal{max-width:34em;margin-top:14px;color:var(--ink-soft)}
+.ch-head::after{content:"";width:1px;height:40px;background:var(--line);margin-top:18px}
+.sub{display:flex;align-items:baseline;gap:14px;margin:56px 0 22px;flex-wrap:wrap}
+.sub h3{font-size:22px;letter-spacing:.12em}
+.sub .latin{font-size:16px}
+.sub:first-child{margin-top:0}
+.prose{max-width:var(--measure)}
+.prose p+p{margin-top:1em}
+.muted{color:var(--ink-soft)}
+.small{font-size:14px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.14em;padding:2px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft)}
+
+/* gentle reveal using scroll-driven animation, falls back to fully visible */
+@supports (animation-timeline:view()){
+  .reveal{animation:soft-in linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  @keyframes soft-in{from{opacity:.25;transform:translateY(24px)}to{opacity:1;transform:none}}
+}
+
+/* ── Agenda ── */
+.agenda{display:grid;gap:0;border-top:1px solid var(--line)}
+.ag{display:grid;grid-template-columns:7.5em 3em minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .3s}
+a.ag:hover{background:var(--card)}
+.ag .t{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:14px}
+.ag .n{font-family:var(--f-latin);font-style:italic;color:var(--ink-soft)}
+.ag .x{font-family:var(--f-display);font-size:17px;letter-spacing:.08em;min-width:0}
+.ag .x small{display:block;font-family:var(--f-body);font-size:13px;color:var(--ink-soft);letter-spacing:.02em}
+.ag .now{font-size:12px;color:var(--paper);background:var(--sage);border-radius:999px;padding:1px 10px;visibility:hidden}
+.ag.is-now{background:var(--card)}
+.ag.is-now .now{visibility:visible}
+.ag.brk .x{color:var(--ink-soft)}
+@media (max-width:560px){.ag{grid-template-columns:6.4em minmax(0,1fr) auto}.ag .n{display:none}}
+.info-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:48px}
+.info-row div{border-top:1px solid var(--clay);padding-top:12px}
+.info-row b{display:block;font-family:var(--f-display);font-weight:500;letter-spacing:.1em;margin-bottom:4px}
+
+/* ── Stat line ── */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:8px 0 12px}
+.stat{padding:22px 0;border-top:1px solid var(--line)}
+.stat .num{font-family:var(--f-display);font-size:clamp(34px,5vw,46px);line-height:1.1;color:var(--clay);font-variant-numeric:tabular-nums}
+.stat .num small{font-size:.45em;color:var(--ink-soft);margin-left:4px}
+.stat p{font-size:14px;color:var(--ink-soft);margin-top:8px}
+.src{font-size:12px;color:var(--ink-soft);margin-top:10px}
+.src a{text-decoration-color:var(--line);text-underline-offset:3px}
+
+/* ── Type gallery (像作品集卡片) ── */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+.gcard{min-width:0}
+.gcard .pic{aspect-ratio:4/3;max-width:100%;border-radius:2px;overflow:hidden;position:relative;background:var(--card)}
+.gcard .pic svg{width:100%;height:100%;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gcard:hover .pic svg{transform:scale(1.05)}
+.gcard h4{font-size:17px;letter-spacing:.1em;margin-top:14px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gcard h4 .latin{font-size:14px}
+.gcard p{font-size:14px;color:var(--ink-soft);margin-top:6px}
+
+/* compare table */
+.tbl-wrap{overflow-x:auto;margin-top:8px}
+table.cmp{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.cmp th,.cmp td{padding:14px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:var(--f-display);font-weight:500;letter-spacing:.1em;border-bottom-color:var(--clay)}
+.cmp tbody th{font-weight:500;color:var(--ink-soft);white-space:nowrap;font-size:14px}
+
+/* ── Ten signs ── */
+.signs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.sign{position:relative;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:4px;padding:18px 18px 16px;cursor:pointer;min-height:150px;display:flex;flex-direction:column;gap:8px;transition:border-color .3s,background .3s}
+.sign:hover{border-color:var(--clay)}
+.sign .k{font-family:var(--f-latin);font-style:italic;font-size:26px;line-height:1;color:var(--clay)}
+.sign .h{font-family:var(--f-display);font-size:16px;letter-spacing:.06em;line-height:1.55}
+.sign .more{display:none;font-size:13.5px;line-height:1.75;color:var(--ink-soft)}
+.sign .more b{font-weight:500;color:var(--ink)}
+.sign .hint{margin-top:auto;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+.sign[aria-expanded="true"]{background:var(--paper);grid-row:span 2}
+.sign[aria-expanded="true"] .more{display:block}
+.sign[aria-expanded="true"] .hint{display:none}
+
+/* ── Tool panels (AD8 / checklist) ── */
+.tool{border:1px solid var(--line);background:var(--card);border-radius:4px;padding:clamp(18px,3vw,32px)}
+.tool-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.tool-head h4{font-size:19px;letter-spacing:.1em}
+.qlist{list-style:none;margin:0;padding:0;display:grid}
+.qlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.seg button{border:0;background:transparent;padding:4px 12px;font-size:13px;cursor:pointer;color:var(--ink-soft)}
+.seg button[aria-pressed="true"]{background:var(--sage);color:var(--paper)}
+.seg button+button{border-left:1px solid var(--line)}
+.result{margin-top:18px;padding:14px 18px;border-radius:4px;background:var(--paper);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.result .score{font-family:var(--f-display);font-size:34px;color:var(--clay);font-variant-numeric:tabular-nums;line-height:1}
+.result p{flex:1;min-width:200px;font-size:14.5px}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:start}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 14px;font-size:14px;cursor:pointer;color:var(--ink-soft)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.checks label{display:flex;gap:12px;align-items:flex-start;padding:10px 4px;cursor:pointer;border-bottom:1px dashed var(--line);font-size:15px}
+.checks input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1px solid var(--ink-soft);border-radius:3px;margin-top:5px;flex:none;display:grid;place-items:center;background:var(--paper)}
+.checks input:checked{background:var(--sage);border-color:var(--sage)}
+.checks input:checked::after{content:"";width:5px;height:9px;border:solid var(--paper);border-width:0 1.5px 1.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.checks input:checked+span{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--line)}
+.meter{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:14px}
+.meter i{display:block;height:100%;width:0;background:var(--sage);transition:width .6s}
+
+/* ── Steps (real sequences only) ── */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;counter-reset:s}
+.steps li{padding:20px 18px 20px 0;border-top:1px solid var(--clay);counter-increment:s;min-width:0}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--f-latin);font-style:italic;font-size:22px;color:var(--clay);margin-bottom:6px}
+.steps b{display:block;font-family:var(--f-display);font-weight:500;letter-spacing:.08em;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--ink-soft)}
+.ladder{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ladder li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:12px 16px;background:var(--card);border-radius:4px}
+.ladder li:nth-child(1){margin-left:0}
+.ladder li:nth-child(2){margin-left:4%}.ladder li:nth-child(3){margin-left:8%}.ladder li:nth-child(4){margin-left:12%}.ladder li:nth-child(5){margin-left:16%}.ladder li:nth-child(6){margin-left:20%}
+.ladder .lv{font-family:var(--f-display);color:var(--clay);font-size:14px;white-space:nowrap}
+.ladder p{font-size:14.5px}
+
+/* list blocks */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px}
+.blk h4{font-size:17px;letter-spacing:.1em;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.blk h4 .latin{font-size:14px}
+.blk ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:15px}
+.blk ul li::marker{color:var(--clay)}
+.note{border-left:2px solid var(--rose);padding:6px 0 6px 16px;margin-top:22px;font-size:15px;color:var(--ink-soft);max-width:var(--measure)}
+.note b{color:var(--ink);font-weight:500}
+
+/* ── Video cards ── */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:36px}
+.video{display:block;text-decoration:none;min-width:0}
+.video .frame{position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;border-radius:2px;background:linear-gradient(135deg,var(--paper-2),var(--card))}
+.video .frame::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,var(--shade),transparent 60%)}
+.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.55) sepia(.18) brightness(1.04);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.video:hover img{transform:scale(1.05);filter:saturate(.8) sepia(.1)}
+.video .play{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;border:1px solid var(--paper);background:color-mix(in srgb,var(--ink) 35%,transparent);display:grid;place-items:center;transition:transform .4s}
+.video:hover .play{transform:scale(1.08)}
+.video .play::after{content:"";border-left:13px solid var(--paper);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.video .dur{position:absolute;right:10px;bottom:8px;font-size:12px;color:var(--paper);background:color-mix(in srgb,var(--ink) 55%,transparent);padding:0 8px;border-radius:2px;font-variant-numeric:tabular-nums}
+.video h4{font-size:16px;margin-top:12px;letter-spacing:.06em}
+.video p{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
+.video .src-line{font-size:12px;color:var(--ink-soft);margin-top:6px;letter-spacing:.06em}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(60,52,44,.82);display:none;align-items:center;justify-content:center;padding:24px var(--gut-r) 24px var(--gut-l)}
+.lightbox.open{display:flex}
+.lightbox .box{width:min(1000px,100%);aspect-ratio:16/9;background:#2b2621}
+.lightbox iframe{width:100%;height:100%;border:0;display:block}
+.lightbox .x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));background:transparent;border:0;color:var(--paper);font-size:34px;cursor:pointer}
+
+/* ── Scenario & quiz ── */
+.scen{display:grid;gap:18px}
+.sc{border-top:1px solid var(--line);padding-top:18px}
+.sc .q{font-family:var(--f-display);font-size:17px;letter-spacing:.06em}
+.sc .q small{display:block;font-family:var(--f-body);font-size:13px;color:var(--ink-soft);letter-spacing:.1em;margin-bottom:4px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+.opt{border:1px solid var(--line);background:var(--card);border-radius:4px;padding:12px 16px;text-align:left;cursor:pointer;font-size:15px;transition:all .3s}
+.opt:hover{border-color:var(--clay)}
+.opt.good{border-color:var(--sage);background:color-mix(in srgb,var(--sage) 16%,var(--card))}
+.opt.bad{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 14%,var(--card))}
+.fb{font-size:14.5px;color:var(--ink-soft);margin-top:10px;display:none}
+.fb.show{display:block}
+.quiz{display:grid;gap:0;counter-reset:q;border-top:1px solid var(--line)}
+.qz{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);counter-increment:q}
+.qz>p::before{content:"Q" counter(q) "　";font-family:var(--f-latin);font-style:italic;color:var(--clay)}
+.qz .ans{grid-column:1/-1;font-size:14px;color:var(--ink-soft);display:none}
+.qz.done .ans{display:block}
+.ox{display:flex;gap:6px}
+.ox button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-family:var(--f-display);font-size:17px}
+.ox button.good{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+.ox button.bad{background:var(--rose);border-color:var(--rose);color:var(--paper)}
+
+/* ── Resources ── */
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line)}
+.r{padding:20px 18px 20px 0;border-bottom:1px solid var(--line);min-width:0}
+.r b{display:block;font-family:var(--f-display);font-weight:500;letter-spacing:.08em}
+.r .tel{font-family:var(--f-display);font-size:24px;color:var(--clay);font-variant-numeric:tabular-nums;letter-spacing:.06em;user-select:all;margin:4px 0}
+.r p{font-size:14px;color:var(--ink-soft)}
+.r a.go{display:inline-block;margin-top:6px;font-size:13px;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:1px}
+.r a.go::after{content:" ↗"}
+.lib-group{margin-top:40px}
+.lib-group:first-of-type{margin-top:0}
+.lib-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.lib-head h4{font-size:18px;letter-spacing:.12em}
+.lib-head .latin{font-size:15px}
+.lib-head .cnt{margin-left:auto;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px}
+.lc{display:block;text-decoration:none;min-width:0}
+.lc .shot{aspect-ratio:16/10;max-width:100%;overflow:hidden;border-radius:2px;background:var(--card);border:1px solid var(--line)}
+.lc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:saturate(.7) sepia(.08);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.lc:hover img{transform:scale(1.05);filter:none}
+.lc h5{font-family:var(--f-display);font-weight:500;font-size:16px;letter-spacing:.06em;margin:12px 0 0;display:flex;justify-content:space-between;gap:8px}
+.lc h5::after{content:"↗";color:var(--clay);font-family:var(--f-body)}
+.lc p{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
+.lc .use{font-size:12px;color:var(--ink-soft);letter-spacing:.08em;margin-top:6px}
+textarea{width:100%;min-height:120px;border:1px solid var(--line);background:var(--card);border-radius:4px;padding:14px;font:inherit;color:var(--ink);resize:vertical}
+
+/* ── Side progress ── */
+.rail{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:12px}
+.rail a{width:7px;height:7px;border-radius:50%;background:var(--line);display:block;transition:all .3s;position:relative}
+.rail a.on{background:var(--clay);transform:scale(1.4)}
+.rail a span{position:absolute;right:16px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;color:var(--ink-soft);opacity:0;transition:opacity .3s;pointer-events:none;background:var(--paper);padding:0 6px}
+.rail a:hover span{opacity:1}
+@media (max-width:1180px){.rail{display:none}}
+
+footer{background:var(--paper-2);border-top:1px solid var(--line);padding-block:48px calc(48px + env(safe-area-inset-bottom,0px));font-size:13.5px;color:var(--ink-soft)}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+footer b{color:var(--ink);font-weight:500;font-family:var(--f-display);letter-spacing:.1em}
+.kbd-tip{font-size:12px;color:var(--ink-soft);letter-spacing:.08em}
+kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2px;border-radius:3px;padding:0 5px;font-size:11px}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media print{
+  .bar,.rail,.menu,.lightbox,.scroll-cue,.chip-btn,.hero canvas{display:none!important}
+  body{background:#fff}
+  section.ch{padding-block:28px;break-inside:auto}
+  .sign .more{display:block}.sign .hint{display:none}
+  .reveal{animation:none!important;opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ───────── Top bar ───────── -->
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="回到頂端">
+      <span class="brand-mark">憶</span>
+      <span class="brand-txt"><b>失智照護 日和講堂</b><small>Dementia Care · Taoyuan</small></span>
+    </a>
+    <div class="bar-tools">
+      <span class="kbd-tip hide-sm"><kbd>←</kbd><kbd>→</kbd> 換章</span>
+      <button class="chip-btn" id="presentBtn" aria-pressed="false" type="button">投影模式</button>
+      <button class="burger" id="menuBtn" aria-label="開啟章節選單" aria-expanded="false" type="button"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="章節選單">
+  <button class="menu-close" id="menuClose" aria-label="關閉選單" type="button">×</button>
+  <ol>
+    <li><a href="#intro"><span class="no">00</span><span class="nm">課程資訊</span><span class="tm">13:00</span></a></li>
+    <li><a href="#understand"><span class="no">01</span><span class="nm">認識失智症</span><span class="tm">13:15</span></a></li>
+    <li><a href="#recognize"><span class="no">02</span><span class="nm">早期辨識</span><span class="tm">13:55</span></a></li>
+    <li><a href="#health"><span class="no">03</span><span class="nm">健康問題辨識</span><span class="tm">14:45</span></a></li>
+    <li><a href="#safety"><span class="no">04</span><span class="nm">安全照護</span><span class="tm">15:25</span></a></li>
+    <li><a href="#care"><span class="no">05</span><span class="nm">溝通・復能・預防</span><span class="tm">16:05</span></a></li>
+    <li><a href="#resources"><span class="no">06</span><span class="nm">資源・教案庫・測驗</span><span class="tm">16:25</span></a></li>
+  </ol>
+</nav>
+
+<nav class="rail" id="rail" aria-label="章節進度">
+  <a href="#top"><span>開場</span></a>
+  <a href="#intro"><span>00 課程資訊</span></a>
+  <a href="#understand"><span>01 認識失智症</span></a>
+  <a href="#recognize"><span>02 早期辨識</span></a>
+  <a href="#health"><span>03 健康問題辨識</span></a>
+  <a href="#safety"><span>04 安全照護</span></a>
+  <a href="#care"><span>05 溝通・復能・預防</span></a>
+  <a href="#resources"><span>06 資源與測驗</span></a>
+</nav>
+
+<!-- ───────── Hero ───────── -->
+<section class="hero" id="top">
+  <canvas id="sun" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <p class="hero-eyebrow rise">桃園市政府衛生局　失智症教育訓練</p>
+      <h1 class="rise d2">看見改變，<br>守住<em>日常</em>的安全</h1>
+      <span class="latin big rise d2">Recognising Health Problems &amp; Safe Care in Dementia</span>
+      <p class="hero-lead rise d3">失智症健康問題辨識與安全照護。從分辨「老了」與「病了」開始，到在家裡、在社區，讓長輩活得安全、也活得像自己。</p>
+    </div>
+    <div class="hero-meta rise d3">
+      <div><b>2026 年 11 月 4 日（三）</b>13:00 – 16:35</div>
+      <div><b>桃園市工業會 1202 教室</b>桃園區縣府路 332 號 12 樓</div>
+      <div><b>主辦</b>桃園市政府衛生局 醫事管理科</div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ───────── 00 Intro ───────── -->
+<section class="ch" id="intro">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">00</span>
+      <h2>課程資訊</h2>
+      <span class="latin">Course Schedule</span>
+      <p class="goal">今天三個半小時，我們沿著「辨識 → 判斷 → 照護 → 資源」這條路走一遍。下方時間表會依現在時間標示目前進行的段落。</p>
+    </div>
+
+    <div class="agenda reveal" id="agenda">
+      <a class="ag" href="#top" data-s="13:00" data-e="13:15"><span class="t">13:00–13:15</span><span class="n">—</span><span class="x">開場暖身<small>你身邊有沒有「怪怪的」長輩？</small></span><span class="now">進行中</span></a>
+      <a class="ag" href="#understand" data-s="13:15" data-e="13:55"><span class="t">13:15–13:55</span><span class="n">01</span><span class="x">認識失智症<small>台灣現況、類型、病程、與正常老化的差別</small></span><span class="now">進行中</span></a>
+      <a class="ag" href="#recognize" data-s="13:55" data-e="14:35"><span class="t">13:55–14:35</span><span class="n">02</span><span class="x">早期辨識<small>十大警訊、AD8 極早期篩檢實作</small></span><span class="now">進行中</span></a>
+      <div class="ag brk" data-s="14:35" data-e="14:45"><span class="t">14:35–14:45</span><span class="n">—</span><span class="x">休息<small>伸展一下，喝口水</small></span><span class="now">進行中</span></div>
+      <a class="ag" href="#health" data-s="14:45" data-e="15:25"><span class="t">14:45–15:25</span><span class="n">03</span><span class="x">健康問題辨識<small>譫妄、精神行為症狀、疼痛、跌倒、營養與感染</small></span><span class="now">進行中</span></a>
+      <a class="ag" href="#safety" data-s="15:25" data-e="16:05"><span class="t">15:25–16:05</span><span class="n">04</span><span class="x">安全照護<small>居家環境、防走失、用藥與用火安全</small></span><span class="now">進行中</span></a>
+      <a class="ag" href="#care" data-s="16:05" data-e="16:25"><span class="t">16:05–16:25</span><span class="n">05</span><span class="x">溝通・復能・預防<small>情境演練、提示階梯、趨吉避凶</small></span><span class="now">進行中</span></a>
+      <a class="ag" href="#resources" data-s="16:25" data-e="16:35"><span class="t">16:25–16:35</span><span class="n">06</span><span class="x">資源與課後測驗<small>求助管道、六題小測驗、Q&amp;A</small></span><span class="now">進行中</span></a>
+    </div>
+
+    <div class="info-row reveal">
+      <div><b>學習目標一</b><span class="muted small">能說出失智症與正常老化的差異，並運用十大警訊與 AD8 協助早期辨識。</span></div>
+      <div><b>學習目標二</b><span class="muted small">能分辨譫妄、精神行為症狀等急慢性健康問題，知道何時需要就醫。</span></div>
+      <div><b>學習目標三</b><span class="muted small">能評估居家與外出安全風險，並以尊重、復能的方式與長輩互動。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 01 Understand ───────── -->
+<section class="ch alt" id="understand">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">01</span>
+      <h2>認識失智症</h2>
+      <span class="latin">Understanding Dementia</span>
+      <span class="time">13:15 – 13:55</span>
+      <p class="goal">失智症不是單一疾病，而是一群症狀：記憶、語言、判斷、空間感等認知功能退化，嚴重到影響日常生活與人際互動。</p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">7.99<small>%</small></div><p>65 歲以上長者失智症盛行率，約每 12～13 位長者就有 1 位。</p></div>
+      <div class="stat"><div class="num">17.53<small>%</small></div><p>65 歲以上輕度認知障礙（MCI）盛行率。這是介入、延緩的黃金時期。</p></div>
+      <div class="stat"><div class="num">45<small>%</small></div><p>失智症風險可能與 14 項可改變的危險因子相關，預防是做得到的。</p></div>
+    </div>
+    <p class="src">資料來源：衛生福利部 2020–2023 全國失智症流行病學調查；The Lancet Commission on Dementia, 2024。</p>
+
+    <div class="sub reveal"><h3>常見的四種類型</h3><span class="latin">Four Common Types</span></div>
+    <div class="gallery reveal">
+      <article class="gcard">
+        <div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#EDE5D8"/><circle cx="200" cy="150" r="92" fill="#E2D6C4"/><path d="M130 150c0-40 30-70 70-70s70 30 70 70" fill="none" stroke="#C3A78C" stroke-width="2"/><circle cx="160" cy="140" r="6" fill="#C3A78C"/><circle cx="190" cy="120" r="4" fill="#C3A78C" opacity=".6"/><circle cx="225" cy="135" r="5" fill="#C3A78C" opacity=".4"/><circle cx="245" cy="160" r="3" fill="#C3A78C" opacity=".25"/></svg></div>
+        <h4>阿茲海默症 <span class="latin">Alzheimer's</span></h4>
+        <p>最常見。早期以「近期記憶」退化為主，病程緩慢持續進展。</p>
+      </article>
+      <article class="gcard">
+        <div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#E9E4D9"/><path d="M60 230 C120 200 140 120 200 120 S 280 60 340 70" fill="none" stroke="#A2A790" stroke-width="3"/><path d="M60 230 C120 200 140 120 200 120" fill="none" stroke="#CBB3A7" stroke-width="3" stroke-dasharray="6 10"/><circle cx="200" cy="120" r="10" fill="#CBB3A7"/></svg></div>
+        <h4>血管型 <span class="latin">Vascular</span></h4>
+        <p>中風或腦血管病變後出現，常呈階梯式退化，與三高控制密切相關。</p>
+      </article>
+      <article class="gcard">
+        <div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#ECE6DB"/><g fill="#C3A78C" opacity=".55"><circle cx="120" cy="110" r="22"/><circle cx="270" cy="90" r="14"/><circle cx="230" cy="200" r="28" opacity=".5"/></g><path d="M80 240h240" stroke="#A2A790" stroke-width="2"/><path d="M100 240 l12-30 l12 30 M170 240 l12-46 l12 46 M240 240 l12-22 l12 22" fill="none" stroke="#A2A790" stroke-width="2"/></svg></div>
+        <h4>路易氏體 <span class="latin">Lewy Body</span></h4>
+        <p>認知功能時好時壞、常見鮮明視幻覺，合併類巴金森症狀，易跌倒。</p>
+      </article>
+      <article class="gcard">
+        <div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#EEE7DC"/><path d="M110 200c0-60 40-110 90-110" fill="none" stroke="#CBB3A7" stroke-width="18" stroke-linecap="round" opacity=".7"/><path d="M200 90c50 0 90 50 90 110" fill="none" stroke="#E0D4C3" stroke-width="18" stroke-linecap="round"/></svg></div>
+        <h4>額顳葉型 <span class="latin">Frontotemporal</span></h4>
+        <p>發病較早（常在 65 歲前），以個性、行為改變或語言障礙為主，記憶反而較晚受影響。</p>
+      </article>
+    </div>
+
+    <div class="sub reveal"><h3>老了？還是病了？</h3><span class="latin">Ageing or Illness</span></div>
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th></th><th>正常老化的健忘</th><th>失智症</th></tr></thead>
+        <tbody>
+          <tr><th>忘記的範圍</th><td>忘記部分細節，例如人名</td><td>忘記整件事，例如剛吃過飯</td></tr>
+          <tr><th>提示後</th><td>經提醒會想起來</td><td>提醒了也想不起來</td></tr>
+          <tr><th>病識感</th><td>知道自己會忘，會用筆記補救</td><td>常否認忘記，或合理化</td></tr>
+          <tr><th>日常生活</th><td>不受影響</td><td>逐漸影響工作、理財、家務</td></tr>
+          <tr><th>病程</th><td>多年變化不大</td><td>持續且逐漸惡化</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub reveal"><h3>病程的三個階段</h3><span class="latin">Stages</span></div>
+    <ol class="steps reveal">
+      <li><b>輕度</b><p>近期記憶差、重複問話、理財與複雜家務出錯，外表看似正常。照護重點：及早診斷、維持社會參與、規劃法律財務。</p></li>
+      <li><b>中度</b><p>時間地點混淆、需要協助穿衣如廁、易出現遊走與妄想。照護重點：安全環境、防走失、精神行為症狀處理。</p></li>
+      <li><b>重度</b><p>語言能力大幅退化、行動與吞嚥困難、日常全依賴。照護重點：預防壓傷、吸入性肺炎、舒適與善終。</p></li>
+    </ol>
+
+    <div class="videos reveal">
+      <a class="video" href="https://www.youtube.com/watch?v=iZ3d5K91FvI" target="_blank" rel="noopener" data-yt="iZ3d5K91FvI">
+        <div class="frame"><img src="https://i.ytimg.com/vi/iZ3d5K91FvI/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">2:26</span></div>
+        <h4>失智症懶人包</h4>
+        <p>開場用的兩分半短片：一次看懂失智症是什麼、與老化的差別。</p>
+        <p class="src-line">嘉義市政府衛生局 · YouTube</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 02 Recognize ───────── -->
+<section class="ch" id="recognize">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">02</span>
+      <h2>早期辨識</h2>
+      <span class="latin">Early Recognition</span>
+      <span class="time">13:55 – 14:35</span>
+      <p class="goal">點開每一張卡片，看看「失智警訊」與「正常老化」的例子有什麼不同。課堂上可以請學員舉出身邊的實例。</p>
+    </div>
+
+    <div class="sub reveal"><h3>失智症十大警訊</h3><span class="latin">Ten Warning Signs</span><span class="tag">台灣失智症協會</span></div>
+    <div class="signs reveal" id="signs"></div>
+
+    <div class="videos reveal">
+      <a class="video" href="https://www.youtube.com/watch?v=6SBRQEyxEiE" target="_blank" rel="noopener" data-yt="6SBRQEyxEiE">
+        <div class="frame"><img src="https://i.ytimg.com/vi/6SBRQEyxEiE/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">2:36</span></div>
+        <h4>失智十大警訊！及早發現正確就醫</h4>
+        <p>看完卡片後播放，讓學員對照新聞中的真實案例。</p>
+        <p class="src-line">大愛新聞 · YouTube</p>
+      </a>
+    </div>
+
+    <div class="sub reveal"><h3>AD8 極早期失智症篩檢</h3><span class="latin">AD8 Screening</span></div>
+    <div class="split reveal">
+      <div class="tool">
+        <div class="tool-head"><h4>和「過去幾年」相比，是否有改變？</h4><button class="chip-btn" id="ad8Reset" type="button">重新填寫</button></div>
+        <ul class="qlist" id="ad8"></ul>
+        <div class="result"><span class="score" id="ad8Score">0</span><p id="ad8Msg">請依長輩的狀況點選。由熟悉長輩的家屬或照顧者填寫最準確。</p></div>
+      </div>
+      <div class="prose">
+        <p><b>怎麼用：</b>AD8 共 8 題，詢問的是「改變」，不是能力高低。因認知問題而有改變的勾「是」，得 1 分；「不是」與「不知道」不計分。</p>
+        <p><b>怎麼看：</b>總分 <b>2 分以上</b>，建議到神經內科、精神科或記憶門診進一步評估。這是篩檢，不是診斷，分數低也不代表完全沒問題。</p>
+        <p class="note"><b>課堂練習</b>　兩人一組，一人扮演家屬描述長輩近況，另一人用 AD8 訪談，練習把「他最近怪怪的」轉成可以記錄的具體描述。</p>
+        <p class="src">AD8 量表：Galvin et al., Neurology 2005；台灣中文版由台灣失智症協會推廣。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 03 Health ───────── -->
+<section class="ch alt" id="health">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">03</span>
+      <h2>健康問題辨識</h2>
+      <span class="latin">Recognising Health Problems</span>
+      <span class="time">14:45 – 15:25</span>
+      <p class="goal">失智長輩常說不清楚哪裡不舒服，身體的問題往往以「行為改變」的方式出現。照顧者要學會讀懂這些訊號。</p>
+    </div>
+
+    <div class="sub reveal"><h3>譫妄：最容易被誤認的急症</h3><span class="latin">Delirium vs Dementia</span></div>
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th></th><th>譫妄 Delirium</th><th>失智症 Dementia</th></tr></thead>
+        <tbody>
+          <tr><th>發生速度</th><td>急性，數小時到數天內</td><td>緩慢，數月到數年</td></tr>
+          <tr><th>一天之中</th><td>時好時壞，夜間常加重</td><td>相對穩定</td></tr>
+          <tr><th>注意力</th><td>明顯無法專注、答非所問</td><td>早期大致保留</td></tr>
+          <tr><th>意識</th><td>混亂、嗜睡或躁動</td><td>早期清楚</td></tr>
+          <tr><th>可逆性</th><td>找到原因並治療後多可改善</td><td>多為持續進展</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note reveal"><b>判斷原則</b>　長輩「突然」變得比平常更混亂、更嗜睡或更躁動，先想到譫妄，盡快就醫。常見誘因：<b>泌尿道感染、肺炎、脫水、便秘或尿滯留、疼痛、新用藥（特別是安眠鎮靜藥）、住院或搬家等環境改變</b>。</p>
+
+    <div class="sub reveal"><h3>其他需要留意的健康問題</h3><span class="latin">Hidden Signals</span></div>
+    <div class="cols reveal">
+      <div class="blk">
+        <h4>精神行為症狀 <span class="latin">BPSD</span></h4>
+        <ul>
+          <li>妄想：覺得東西被偷、配偶不忠</li>
+          <li>幻覺：看見不存在的人或動物</li>
+          <li>遊走、反覆開門想「回家」</li>
+          <li>黃昏症候群：傍晚躁動不安</li>
+          <li>日夜顛倒、拒絕洗澡或吃藥</li>
+          <li>憂鬱、淡漠，什麼都提不起勁</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>疼痛說不出口 <span class="latin">Pain</span></h4>
+        <ul>
+          <li>皺眉、表情痛苦、呻吟</li>
+          <li>護著某個部位、不願移動</li>
+          <li>突然拒絕照顧、出手推人</li>
+          <li>食慾變差、睡不好</li>
+          <li>可用 PAINAD 量表觀察：呼吸、負面聲音、臉部表情、肢體語言、可安撫程度，每項 0–2 分</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>跌倒、營養與感染 <span class="latin">Body</span></h4>
+        <ul>
+          <li>步態變慢、拖步，是跌倒的前兆</li>
+          <li>忘記喝水，容易脫水與便秘</li>
+          <li>吃飯變慢、含著不吞、嗆咳</li>
+          <li>體重三個月內明顯下降</li>
+          <li>泌尿道感染常沒有發燒，只表現為「更混亂」</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub reveal"><h3>行為改變時，先找原因</h3><span class="latin">The DICE Approach</span></div>
+    <ol class="steps reveal">
+      <li><b>描述 Describe</b><p>具體記下行為：什麼時候、在哪裡、和誰、發生前後做了什麼。</p></li>
+      <li><b>探究 Investigate</b><p>找原因：疼痛、便秘、感染、藥物、睡眠、環境太吵、照顧方式。</p></li>
+      <li><b>擬定 Create</b><p>團隊與家屬一起訂出非藥物的做法，例如調整作息、簡化環境、安排活動。</p></li>
+      <li><b>評估 Evaluate</b><p>試行後追蹤是否改善，無效再調整，必要時才考慮藥物。</p></li>
+    </ol>
+    <p class="src">DICE：Kales, Gitlin &amp; Lyketsos, BMJ 2015。</p>
+  </div>
+</section>
+
+<!-- ───────── 04 Safety ───────── -->
+<section class="ch" id="safety">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">04</span>
+      <h2>安全照護</h2>
+      <span class="latin">Safe Care at Home &amp; Outdoors</span>
+      <span class="time">15:25 – 16:05</span>
+      <p class="goal">安全不是把長輩關起來，而是調整環境，讓他在可控制的風險裡，繼續做自己能做的事。</p>
+    </div>
+
+    <div class="sub reveal"><h3>居家安全檢核</h3><span class="latin">Home Safety Check</span></div>
+    <div class="split reveal">
+      <div class="tool">
+        <div class="tabs" role="tablist" id="roomTabs"></div>
+        <ul class="checks" id="roomList"></ul>
+        <div class="meter"><i id="roomMeter"></i></div>
+        <p class="small muted" id="roomStat" style="margin-top:8px">已完成 0 / 0 項</p>
+      </div>
+      <div class="prose">
+        <p>以小組為單位，選一位成員家中或服務個案的家，逐一勾選。勾不到的項目，就是今天回去可以改善的地方。</p>
+        <p class="note"><b>環境設計小訣竅</b>　失智長輩對顏色對比較敏感。馬桶座、扶手、門框用與牆面不同的顏色；不希望長輩開的門，則可以漆成和牆一樣的顏色、或掛上布簾。</p>
+        <p class="note"><b>鏡子</b>　部分長輩會把鏡中的自己當成陌生人而害怕，出現這種情況時可以把鏡子遮起來。</p>
+      </div>
+    </div>
+
+    <div class="sub reveal"><h3>防走失</h3><span class="latin">Preventing Wandering</span></div>
+    <div class="cols reveal">
+      <div class="blk">
+        <h4>事前準備 <span class="latin">Before</span></h4>
+        <ul>
+          <li>申請「愛的手鍊」，手鍊上有編號與協尋專線</li>
+          <li>到警察局做指紋建檔</li>
+          <li>衣物、鞋子縫上聯絡資訊</li>
+          <li>家中保留長輩近照與當日穿著紀錄</li>
+          <li>可考慮 GPS 定位裝置、門口感應鈴</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>發生時 <span class="latin">When It Happens</span></h4>
+        <ul>
+          <li><b>立即撥 110 報案，不必等 24 小時</b></li>
+          <li>先找長輩過去常去、以前住過的地方</li>
+          <li>提供照片、穿著、手鍊編號給警方</li>
+          <li>通知鄰里長、社區據點協助留意</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>遇到疑似走失長輩 <span class="latin">If You Meet One</span></h4>
+        <ul>
+          <li>從正面慢慢靠近，溫和打招呼</li>
+          <li>看看手腕有沒有愛的手鍊</li>
+          <li>陪在身邊，撥打 110 協助</li>
+          <li>不要急著糾正他「說錯了」</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="videos reveal">
+      <a class="video" href="https://www.youtube.com/watch?v=5H3BQrbFxfc" target="_blank" rel="noopener" data-yt="5H3BQrbFxfc">
+        <div class="frame"><img src="https://i.ytimg.com/vi/5H3BQrbFxfc/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">3:10</span></div>
+        <h4>申辦安心手鍊，助失智長輩找到回家路</h4>
+        <p>介紹防走失手鍊的用途與申請方式，可接著討論學員所在社區的實際流程。</p>
+        <p class="src-line">T-NEWS 聯播網 · YouTube</p>
+      </a>
+    </div>
+
+    <div class="sub reveal"><h3>用藥與用火用電</h3><span class="latin">Medication &amp; Fire Safety</span></div>
+    <div class="cols reveal">
+      <div class="blk">
+        <h4>用藥安全</h4>
+        <ul>
+          <li>使用分格藥盒，由照顧者每週備藥</li>
+          <li>盡量固定同一家藥局，方便查核重複用藥</li>
+          <li>不自行增減或停藥，回診時帶藥袋給醫師看</li>
+          <li>安眠鎮靜藥會增加跌倒與混亂風險，有疑問先問醫師或藥師</li>
+          <li>藥品收在長輩拿不到的地方</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>用火用電</h4>
+        <ul>
+          <li>換裝有自動熄火裝置的瓦斯爐，或改用電磁爐</li>
+          <li>安裝住宅用火災警報器</li>
+          <li>電暖器、熱水瓶放在不易碰倒的位置</li>
+          <li>熱水器設定在 50°C 以下，避免燙傷</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>開車與財務</h4>
+        <ul>
+          <li>出現迷路或判斷力下降時，與家屬、醫師討論停止駕駛</li>
+          <li>留意詐騙電話與推銷，必要時設定提款限額</li>
+          <li>趁早討論意定監護、輔助宣告等法律安排</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 05 Care ───────── -->
+<section class="ch alt" id="care">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">05</span>
+      <h2>溝通・復能・預防</h2>
+      <span class="latin">Communication, Reablement &amp; Prevention</span>
+      <span class="time">16:05 – 16:25</span>
+      <p class="goal">好的照護，是讓長輩在被理解的關係裡，盡可能自己完成生活中的事。</p>
+    </div>
+
+    <div class="sub reveal"><h3>情境演練：你會怎麼回應？</h3><span class="latin">Role Play</span></div>
+    <div class="scen reveal" id="scen"></div>
+
+    <div class="cols reveal" style="margin-top:44px">
+      <div class="blk">
+        <h4>溝通時這樣做</h4>
+        <ul>
+          <li>從正面靠近，蹲下或坐下與他平視</li>
+          <li>先叫名字，等他看向你再開口</li>
+          <li>句子短、一次只說一件事</li>
+          <li>給他時間回答，不催促</li>
+          <li>用動作、物品、圖卡輔助說明</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>盡量避免</h4>
+        <ul>
+          <li>爭辯對錯、考他「我是誰？」</li>
+          <li>在他面前和別人討論他的病情</li>
+          <li>用對小孩說話的語氣</li>
+          <li>一次問很多問題或給太多選擇</li>
+          <li>從背後突然碰觸</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="videos reveal">
+      <a class="video" href="https://www.youtube.com/watch?v=byByJVj0utg" target="_blank" rel="noopener" data-yt="byByJVj0utg">
+        <div class="frame"><img src="https://i.ytimg.com/vi/byByJVj0utg/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">7:02</span></div>
+        <h4>與失智者溝通技巧</h4>
+        <p>情境演練後播放，對照影片中的示範做法。</p>
+        <p class="src-line">臺北市政府 臺北 e 大 · YouTube</p>
+      </a>
+    </div>
+
+    <div class="sub reveal"><h3>復能：提示階梯</h3><span class="latin">Prompting Hierarchy</span></div>
+    <div class="split reveal">
+      <ol class="ladder">
+        <li><span class="lv">先等待</span><p>給 5–10 秒，看他能不能自己開始。</p></li>
+        <li><span class="lv">口語提示</span><p>「我們先把右手放進袖子裡。」</p></li>
+        <li><span class="lv">手勢指引</span><p>指著衣袖、輕拍要用的那隻手。</p></li>
+        <li><span class="lv">示範動作</span><p>自己做一次穿袖子的動作給他看。</p></li>
+        <li><span class="lv">部分協助</span><p>手放在他的手上，引導開頭，讓他完成後半。</p></li>
+        <li><span class="lv">完全協助</span><p>前面都試過仍做不到時，才由照顧者代勞。</p></li>
+      </ol>
+      <div class="prose">
+        <p>復能的核心是<b>從最少的協助開始</b>。照顧者「做得快」，長輩就失去練習的機會，能力退化得更快。</p>
+        <p>把目標放在長輩自己在意的事：想自己吃飯、想去市場、想照顧盆栽。把這些事拆成小步驟，每天的生活就是訓練。</p>
+      </div>
+    </div>
+
+    <div class="sub reveal"><h3>健康促進：趨吉避凶</h3><span class="latin">Lower the Risk</span><span class="tag">國民健康署</span></div>
+    <div class="cols reveal">
+      <div class="blk">
+        <h4>趨吉 <span class="latin">Do More</span></h4>
+        <ul>
+          <li>多運動：每週至少 150 分鐘中等強度活動</li>
+          <li>多動腦：學新事物、閱讀、下棋、學才藝</li>
+          <li>多社會互動：參加社區據點、志工、聚會</li>
+          <li>均衡飲食：多蔬果、全穀、魚類，少加工食品</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>避凶 <span class="latin">Avoid</span></h4>
+        <ul>
+          <li>控制三高：血壓、血糖、血脂</li>
+          <li>避免頭部外傷，騎車戴安全帽、預防跌倒</li>
+          <li>不吸菸、不過量飲酒</li>
+          <li>遠離憂鬱，聽力、視力問題及早矯正</li>
+        </ul>
+      </div>
+    </div>
+    <div class="videos reveal">
+      <a class="video" href="https://www.youtube.com/watch?v=pTLCizaDRwg" target="_blank" rel="noopener" data-yt="pTLCizaDRwg">
+        <div class="frame"><img src="https://i.ytimg.com/vi/pTLCizaDRwg/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">0:30</span></div>
+        <h4>預防失智趨吉五招</h4>
+        <p>30 秒短片，適合作為本章收尾。</p>
+        <p class="src-line">衛福部國民健康署 · YouTube</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 06 Resources ───────── -->
+<section class="ch" id="resources">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">06</span>
+      <h2>資源與課後測驗</h2>
+      <span class="latin">Resources &amp; Review</span>
+      <span class="time">16:25 – 16:35</span>
+    </div>
+
+    <div class="sub reveal"><h3>求助管道</h3><span class="latin">Where to Get Help</span></div>
+    <div class="res reveal">
+      <div class="r"><b>長照服務專線</b><div class="tel">1966</div><p>申請長照評估、居家服務、喘息服務、輔具與無障礙改善補助。</p><a class="go" href="https://1966.gov.tw/" target="_blank" rel="noopener">衛福部長照專區</a></div>
+      <div class="r"><b>失智症關懷專線</b><div class="tel">0800-474-580</div><p>台灣失智症協會提供照顧諮詢、情緒支持與資源轉介。</p><a class="go" href="https://www.tada2002.org.tw/" target="_blank" rel="noopener">台灣失智症協會</a></div>
+      <div class="r"><b>走失報案</b><div class="tel">110</div><p>發現長輩走失立即報案，不需等待 24 小時。</p></div>
+      <div class="r"><b>失智共照中心與社區據點</b><p>各縣市設有失智共同照護中心協助確診與個案管理，社區據點提供認知促進、家屬支持團體。</p><a class="go" href="https://www.hpa.gov.tw/" target="_blank" rel="noopener">國民健康署</a></div>
+      <div class="r"><b>桃園市政府衛生局</b><div class="tel">03-3340935</div><p>醫事管理科，本課程主辦單位。</p></div>
+      <div class="r"><b>愛的手鍊</b><p>由中華民國老人福利推動聯盟辦理的防走失手鍊，可洽各地社會局或長照管理中心。</p><a class="go" href="https://www.oldpeople.org.tw/" target="_blank" rel="noopener">老人福利推動聯盟</a></div>
+    </div>
+
+    <div class="sub reveal" id="library"><h3>教案資源庫</h3><span class="latin">Lesson Library by ADLers</span><span class="tag">愛迪樂 鍾孟修 職能治療師</span></div>
+    <p class="muted reveal" style="max-width:var(--measure);margin-bottom:32px">今天課程中提到的照護、活動與衛教工具，都可以免費使用。點擊截圖即可開啟網頁，回到據點、日照或居家時直接帶活動。</p>
+    <div id="lib"></div>
+
+    <div class="sub reveal"><h3>課後小測驗</h3><span class="latin">Quick Review</span><span class="tag" id="quizScore">答對 0 / 6</span></div>
+    <div class="quiz reveal" id="quiz"></div>
+
+    <div class="sub reveal"><h3>我的行動承諾</h3><span class="latin">One Thing I Will Do</span></div>
+    <div class="reveal" style="max-width:var(--measure)">
+      <label for="pledge" class="small muted">回到工作崗位後，我想先做的一件事是……（只存在你自己的瀏覽器裡）</label>
+      <textarea id="pledge" placeholder="例如：下次家訪時，帶著居家安全檢核表，和家屬一起看浴室。"></textarea>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>失智症健康問題辨識與安全照護</b><br>桃園市政府衛生局 積分課程<br>2026.11.04　桃園市工業會 1202 教室</div>
+    <div>本講義內容整理自衛生福利部、國民健康署、台灣失智症協會公開資料與相關文獻，僅供教育訓練使用，個別健康狀況請諮詢專業醫療人員。</div>
+    <div>影片版權屬各原發布單位所有，本頁僅提供連結。<br>上課操作：<kbd>←</kbd><kbd>→</kbd> 切換章節、「投影模式」放大字級。</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="影片播放">
+  <button class="x" id="lbClose" aria-label="關閉影片" type="button">×</button>
+  <div class="box" id="lbBox"></div>
+</div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* ── Hero: dappled leaf shadows on a wall (komorebi) ── */
+  const cv=$('#sun'), ctx=cv.getContext('2d');
+  const off=document.createElement('canvas'), octx=off.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,leaves=[];
+  function seed(){
+    leaves=[];
+    for(let i=0;i<70;i++){
+      const cx=.45+Math.random()*.6, cy=Math.random()*1.1-.05;
+      leaves.push({x:cx,y:cy,r:.012+Math.random()*.03,a:Math.random()*Math.PI,ph:Math.random()*6.28,sp:.4+Math.random()*.6});
+    }
+  }
+  function size(){
+    const r=cv.getBoundingClientRect(); W=r.width; H=r.height;
+    const dpr=Math.min(devicePixelRatio||1,2);
+    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    off.width=Math.max(40,Math.round(W/10)); off.height=Math.max(30,Math.round(H/10));
+  }
+  function draw(t){
+    const w=off.width,h=off.height;
+    octx.clearRect(0,0,w,h);
+    // window light patch
+    const g=octx.createLinearGradient(w*.3,0,w,h);
+    g.addColorStop(0,'rgba(255,250,240,0)'); g.addColorStop(.5,'rgba(255,248,232,.55)'); g.addColorStop(1,'rgba(255,248,232,.15)');
+    octx.fillStyle=g;
+    octx.beginPath(); octx.moveTo(w*.42,0); octx.lineTo(w*1.05,0); octx.lineTo(w*.92,h); octx.lineTo(w*.18,h); octx.closePath(); octx.fill();
+    // leaf shadows
+    octx.fillStyle='rgba(120,100,78,.16)';
+    const s=t/1000;
+    for(const L of leaves){
+      const dx=Math.sin(s*L.sp+L.ph)*.008, dy=Math.cos(s*L.sp*.8+L.ph)*.006;
+      octx.save(); octx.translate((L.x+dx)*w,(L.y+dy)*h); octx.rotate(L.a+Math.sin(s*.5+L.ph)*.15);
+      octx.beginPath(); octx.ellipse(0,0,L.r*w*1.6,L.r*w*.7,0,0,6.283); octx.fill(); octx.restore();
+    }
+    // window mullion shadows
+    octx.fillStyle='rgba(120,100,78,.07)';
+    octx.fillRect(w*.62,0,w*.012,h); octx.fillRect(w*.3,h*.48,w*.7,h*.012);
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,W,H); bg.addColorStop(0,'#F3EEE5'); bg.addColorStop(1,'#EAE2D4');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+    ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
+    ctx.drawImage(off,0,0,W,H);
+  }
+  let visible=true;
+  new IntersectionObserver(e=>{visible=e[0].isIntersecting}).observe(cv);
+  function loop(t){ if(visible) draw(t); requestAnimationFrame(loop); }
+  size(); seed(); draw(0);
+  addEventListener('resize',()=>{size();draw(performance.now())});
+  if(!reduce) requestAnimationFrame(loop);
+
+  /* ── Bar & menu ── */
+  addEventListener('scroll',()=>$('#bar').classList.toggle('scrolled',scrollY>20),{passive:true});
+  const menu=$('#menu'), mb=$('#menuBtn');
+  function setMenu(o){menu.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);$$('.menu a').forEach((a,i)=>a.style.transitionDelay=o?(i*60)+'ms':'0ms');}
+  mb.onclick=()=>setMenu(true); $('#menuClose').onclick=()=>setMenu(false);
+  $$('.menu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+  /* ── Presenter mode ── */
+  const pb=$('#presentBtn');
+  function setPresent(on){document.documentElement.classList.toggle('present',on);pb.setAttribute('aria-pressed',on);store.set('dc-present',on?'1':'0');}
+  pb.onclick=()=>setPresent(pb.getAttribute('aria-pressed')!=='true');
+  if(store.get('dc-present')==='1') setPresent(true);
+
+  /* ── Chapter navigation (keyboard + rail) ── */
+  const ids=['top','intro','understand','recognize','health','safety','care','resources'];
+  const secs=ids.map(id=>document.getElementById(id));
+  function current(){let c=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.35)c=i});return c;}
+  function go(i){i=Math.max(0,Math.min(secs.length-1,i));secs[i].scrollIntoView({behavior:reduce?'auto':'smooth'});}
+  addEventListener('keydown',e=>{
+    if(/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;
+    if(e.key==='Escape'){setMenu(false);closeLb();}
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current()+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current()-1);}
+  });
+  const rail=$$('#rail a');
+  function markRail(){const c=current();rail.forEach((a,i)=>a.classList.toggle('on',i===c));}
+  addEventListener('scroll',markRail,{passive:true}); markRail();
+
+  /* ── Agenda: highlight the block happening now ── */
+  function mins(s){const[a,b]=s.split(':');return +a*60+ +b;}
+  function tick(){const d=new Date(),n=d.getHours()*60+d.getMinutes();
+    $$('#agenda .ag').forEach(r=>r.classList.toggle('is-now',n>=mins(r.dataset.s)&&n<mins(r.dataset.e)));}
+  tick(); setInterval(tick,30000);
+
+  /* ── Ten warning signs ── */
+  const signs=[
+    ['記憶減退，影響到生活','剛說過的話、剛發生的事很快就忘，反覆問同一件事。','偶爾忘記，事後或經提醒能想起來。'],
+    ['計劃事情或解決問題有困難','煮菜步驟錯亂、算錢付帳常出錯。','偶爾算錯，能自己發現並修正。'],
+    ['無法勝任原本熟悉的事務','拿手菜做不出來，做了幾十年的工作開始出錯。','使用新家電、新手機需要別人教。'],
+    ['對時間、地點感到混淆','搞不清楚年月日，在熟悉的路上迷路。','偶爾忘了今天星期幾，之後會想起來。'],
+    ['有困難理解視覺影像和空間關係','看錯鏡中的人，判斷距離困難，上下樓梯不穩。','因白內障等眼睛疾病造成的視力變化。'],
+    ['言語表達或書寫出現困難','叫不出物品名稱，常以「那個」代替，說話重複。','偶爾一時想不起適合的用詞。'],
+    ['東西擺放錯亂，且失去回頭尋找的能力','把錢包放進冰箱，找不到就懷疑被偷。','東西放錯會順著做過的事回頭找到。'],
+    ['判斷力變差或減弱','大熱天穿厚外套，容易被推銷或詐騙。','偶爾做出不太好的決定。'],
+    ['從職場或社交活動中退出','不再參加原本喜愛的活動，整天坐著看電視。','偶爾覺得累，不想出門應酬。'],
+    ['情緒和個性的改變','變得多疑、焦慮、易怒，或變得冷漠退縮。','因特定事件而心情低落，事後恢復。']
+  ];
+  $('#signs').innerHTML=signs.map((s,i)=>`<button class="sign" type="button" aria-expanded="false"><span class="k">${String(i+1).padStart(2,'0')}</span><span class="h">${s[0]}</span><span class="more"><b>警訊：</b>${s[1]}<br><b>正常老化：</b>${s[2]}</span><span class="hint">點一下看例子</span></button>`).join('');
+  $$('.sign').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true'));
+
+  /* ── AD8 ── */
+  const ad8=['判斷力上的困難，例如落入圈套或騙局、財務上做出不好的決定、買了不合宜的禮物','對活動和嗜好的興趣降低','重複相同的問題、故事和陳述','在學習如何使用工具、設備和小器具上有困難，例如電視、遙控器、微波爐','忘記正確的月份和年份','處理複雜的財務上有困難，例如個人或家庭收支平衡、所得稅、繳費單','記住約會的時間有困難','有持續的思考和記憶方面的問題'];
+  const ad8v=new Array(8).fill(null);
+  $('#ad8').innerHTML=ad8.map((q,i)=>`<li><span>${i+1}. ${q}</span><span class="seg" role="group" aria-label="第${i+1}題"><button type="button" data-i="${i}" data-v="1" aria-pressed="false">是</button><button type="button" data-i="${i}" data-v="0" aria-pressed="false">不是</button><button type="button" data-i="${i}" data-v="-1" aria-pressed="false">不知道</button></span></li>`).join('');
+  function ad8Render(){
+    $$('#ad8 button').forEach(b=>b.setAttribute('aria-pressed',ad8v[b.dataset.i]===+b.dataset.v));
+    const sc=ad8v.filter(v=>v===1).length, done=ad8v.filter(v=>v!==null).length;
+    $('#ad8Score').textContent=sc;
+    $('#ad8Msg').textContent= done===0?'請依長輩的狀況點選。由熟悉長輩的家屬或照顧者填寫最準確。'
+      : sc>=2?`已作答 ${done}/8 題。目前 ${sc} 分，已達 2 分，建議安排神經內科、精神科或記憶門診進一步評估。`
+      : `已作答 ${done}/8 題。目前 ${sc} 分，未達 2 分。仍請持續觀察，有新的改變再評估一次。`;
+  }
+  $('#ad8').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;ad8v[b.dataset.i]=+b.dataset.v;ad8Render();});
+  $('#ad8Reset').onclick=()=>{ad8v.fill(null);ad8Render();};
+  ad8Render();
+
+  /* ── Home safety checklist ── */
+  const rooms={
+    '走道客廳':['走道淨空，沒有電線、雜物或小地毯','夜間有感應夜燈照到廁所的路','常坐的椅子有扶手、高度好起身','家具角落加裝防撞護角'],
+    '浴室':['地面有止滑墊或止滑處理','馬桶與淋浴區旁有扶手','洗澡用有靠背的洗澡椅','熱水溫度設定在 50°C 以下','門鎖可以從外面打開'],
+    '廚房':['瓦斯爐有自動熄火裝置，或改用電磁爐','刀具、清潔劑收在不易取得處','冰箱定期檢查過期食物','裝設住宅用火災警報器'],
+    '臥室':['床的高度適中，坐著時雙腳可平放地面','床邊有燈的開關或觸控燈','常用物品放在伸手可及的高度','白天拉開窗簾，維持日夜節律'],
+    '出入口':['大門有感應鈴或開門提醒','長輩已配戴愛的手鍊或完成指紋建檔','鑰匙、證件放在固定位置','門口留有家屬聯絡電話'],
+  };
+  const names=Object.keys(rooms); let cur=names[0];
+  const ck={}; try{Object.assign(ck,JSON.parse(store.get('dc-checks')||'{}'))}catch(e){}
+  $('#roomTabs').innerHTML=names.map(n=>`<button type="button" role="tab" data-r="${n}">${n}</button>`).join('');
+  function roomRender(){
+    $$('#roomTabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.r===cur));
+    $('#roomList').innerHTML=rooms[cur].map((t,i)=>{const id=`ck-${names.indexOf(cur)}-${i}`;return `<li><label for="${id}"><input type="checkbox" id="${id}" ${ck[id]?'checked':''}><span>${t}</span></label></li>`}).join('');
+    const all=names.flatMap((n,ri)=>rooms[n].map((_,i)=>`ck-${ri}-${i}`)), done=all.filter(k=>ck[k]).length;
+    $('#roomMeter').style.width=(done/all.length*100)+'%';
+    $('#roomStat').textContent=`全屋已完成 ${done} / ${all.length} 項`;
+  }
+  $('#roomTabs').onclick=e=>{const b=e.target.closest('button');if(b){cur=b.dataset.r;roomRender();}};
+  $('#roomList').onchange=e=>{ck[e.target.id]=e.target.checked;store.set('dc-checks',JSON.stringify(ck));roomRender();};
+  roomRender();
+
+  /* ── Scenarios ── */
+  const scen=[
+    ['情境一　被偷妄想','媽媽很生氣地說：「我的錢被偷了！一定是看護拿的！」',
+      [['「沒有人偷啦，是你自己放錯地方。」',0,'直接否定會讓長輩覺得不被相信，情緒更激動，也可能把矛頭轉向你。'],
+       ['「錢不見了一定很著急，我陪你一起找找看。」',1,'先接住情緒，再一起行動。可以預先知道她常藏東西的地方，「找到」時讓她自己發現。']]],
+    ['情境二　黃昏想回家','傍晚時分，爸爸拿著外套一直說：「我要回家了，家裡在等我。」（他其實就在家裡）',
+      [['「你在講什麼？這裡就是你家啊！」',0,'糾正事實無法解決他心裡的不安，反而容易起衝突。'],
+       ['「你想回家看看誰呢？先坐下喝杯茶，跟我說說老家的事。」',1,'回應背後的需要（想念、不安），再用茶點與回憶轉移注意力，同時檢查是不是累了、餓了或想上廁所。']]],
+    ['情境三　拒絕洗澡','阿嬤一看到浴室就大喊：「我不要！我已經洗過了！」',
+      [['趁人手多，大家一起幫忙把她洗好。',0,'強迫會讓洗澡變成可怕的經驗，下次更難進行，也容易受傷。'],
+       ['先暫停，換個時間或換人；洗的時候用毛巾蓋住身體，一步一步告訴她要做什麼。',1,'尊重隱私、降低冷與怕。也可以把洗澡安排在她平常習慣的時段，用「去泡泡腳」等她熟悉的說法開始。']]]
+  ];
+  $('#scen').innerHTML=scen.map((s,si)=>`<div class="sc"><p class="q"><small>${s[0]}</small>${s[1]}</p><div class="opts">${s[2].map((o,oi)=>`<button class="opt" type="button" data-s="${si}" data-o="${oi}">${o[0]}</button>`).join('')}</div><p class="fb" id="fb${si}"></p></div>`).join('');
+  $('#scen').onclick=e=>{const b=e.target.closest('.opt');if(!b)return;const s=scen[b.dataset.s],o=s[2][b.dataset.o];
+    $$(`#scen .opt[data-s="${b.dataset.s}"]`).forEach(x=>x.classList.remove('good','bad'));
+    b.classList.add(o[1]?'good':'bad');const fb=$('#fb'+b.dataset.s);fb.textContent=(o[1]?'比較好的回應。':'可以再想想。')+o[2];fb.classList.add('show');};
+
+  /* ── Quiz ── */
+  const quiz=[
+    ['失智症是正常老化的一部分，年紀大了都會發生。',0,'失智症是疾病，不是正常老化。多數長者並不會失智。'],
+    ['長輩在一兩天內突然變得混亂、時好時壞，應優先懷疑譫妄並就醫。',1,'急性發生、波動的混亂是譫妄的特徵，常由感染、脫水、藥物等引起，需要盡快就醫。'],
+    ['失智長輩走失，要等滿 24 小時才能報案。',0,'不需要等待，發現走失就立即撥 110。'],
+    ['AD8 得分 2 分以上，建議進一步就醫評估。',1,'AD8 ≥ 2 分建議至記憶門診、神經內科或精神科評估。'],
+    ['照顧時能代勞就代勞，長輩才不會有挫折感。',0,'過度協助會加速功能退化。復能從最少的協助開始，讓長輩做自己做得到的部分。'],
+    ['約有四成五的失智症風險，與可以改變的生活因素有關。',1,'2024 年 Lancet 委員會指出 14 項可改變危險因子，約占 45% 的風險。']
+  ];
+  const qa=new Array(quiz.length).fill(null);
+  $('#quiz').innerHTML=quiz.map((q,i)=>`<div class="qz" id="qz${i}"><p>${q[0]}</p><div class="ox"><button type="button" data-q="${i}" data-v="1" aria-label="對">○</button><button type="button" data-q="${i}" data-v="0" aria-label="錯">✕</button></div><p class="ans">${q[2]}</p></div>`).join('');
+  $('#quiz').onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.q;qa[i]=+b.dataset.v;
+    $$(`#quiz button[data-q="${i}"]`).forEach(x=>x.classList.remove('good','bad'));
+    b.classList.add(qa[i]===quiz[i][1]?'good':'bad');$('#qz'+i).classList.add('done');
+    $('#quizScore').textContent=`答對 ${qa.filter((v,j)=>v===quiz[j][1]).length} / ${quiz.length}`;};
+
+  /* ── Lesson library ── */
+  const GH='https://mattsue1003.github.io/';
+  const lib=[
+    ['失智照護','Dementia Care',[
+      ['dementia-activity-database','失智長輩活動資料庫','26 份完整教案、60 個活動點子、120 支示範影片，可依場域與失智程度篩選。','對應 05 溝通・復能'],
+      ['dementia-communication-database','失智症溝通技巧資料庫','「錢被偷了」「我要回家」等常見情境的對話方法與實證。','對應 05 情境演練'],
+      ['dementia-cues','失智友善標示・提示卡生成器','大字配圖的廁所、房門、出門提醒標示，可直接列印。','對應 04 居家安全'],
+      ['cognitive-playbook-generator','認知手冊生成器','依注意力、記憶、定向等向度，產生每天一頁的認知訓練手冊。','對應 02 早期辨識'],
+      ['dementia-care-hub','預防失智症｜從理解到行動','從危險因子到生活行動的預防失智互動簡報。','對應 05 趨吉避凶'],
+    ]],
+    ['健康問題與痠痛','Health & Body Aches',[
+      ['bodysoreproblemlearn','痠痛問題影片學習資料庫','依身體部位找痠痛問題的衛教與運動影片。','對應 03 疼痛辨識'],
+      ['massage-ball','按摩球影音資料庫','依身體部位與痠痛問題，找單顆按摩球的教學影片。','居家自我照顧'],
+      ['sore-research-slides','運動能止痛嗎？','157 篇系統性回顧的傘狀分析，整理運動與疼痛的實證。','實證補充'],
+    ]],
+    ['懷舊與認知活動','Reminiscence',[
+      ['old-story-interaction','老時代・懷舊活動資料庫','55 則懷舊主題，附年代、台語說法與帶領問句。','懷舊團體'],
+      ['old-toys-game-rules','長者懷舊童玩資料庫','尪仔標、彈珠、跳格子等童玩的玩法與帶領方式。','懷舊團體'],
+      ['commu-card-senior','老寶貝話匣子','生命故事對談卡，幫助打開長輩的話匣子。','對應 05 溝通'],
+      ['taiwan-story-cards','台灣重要事件互動圖卡','以圖卡回顧台灣重要事件，引導長輩分享當年回憶。','懷舊團體'],
+    ]],
+    ['音樂','Music',[
+      ['oldsongdata','長者回憶高峰金曲 200','懷舊點唱機，收錄長輩年輕時最常聽的 200 首歌。','音樂懷舊'],
+      ['oldsongdance','老歌律動影片資料庫','150 首老歌搭配律動影片，暖身與團體活動都適用。','音樂律動'],
+      ['old-song-guess','金曲猜歌 20 題','懷舊音樂團體用的猜歌互動遊戲。','團體遊戲'],
+    ]],
+    ['圖像','Pictures',[
+      ['oldpicguess','看照片猜藝人','臺灣資深藝人懷舊教案，以照片引發回憶與對話。','圖像懷舊'],
+      ['oldstar-geuss-game','老藝人懷舊猜猜看','30 位老藝人的團體猜謎遊戲。','團體遊戲'],
+    ]],
+    ['台灣好味道','Taste of Taiwan',[
+      ['taiwan-taste-island','台灣好味島','22 縣市、263 種名產的 3D 美食地圖，走一圈台灣、吃一圈台灣。','飲食懷舊'],
+      ['taiwanfood2','台灣美食地圖・縣市小吃探險','依縣市探索小吃，適合引導長輩聊家鄉味。','飲食懷舊'],
+    ]],
+  ];
+  $('#lib').innerHTML=lib.map(([g,en,items])=>`<div class="lib-group reveal"><div class="lib-head"><h4>${g}</h4><span class="latin">${en}</span><span class="cnt">${items.length} 個資源</span></div><div class="lib">${items.map(([slug,t,d,u])=>`<a class="lc" href="${GH}${slug}/" target="_blank" rel="noopener"><div class="shot"><img src="shots/${slug}.jpg" alt="${t} 網頁截圖" loading="lazy"></div><h5>${t}</h5><p>${d}</p><p class="use">${u}</p></a>`).join('')}</div></div>`).join('');
+
+  /* ── Pledge (per-viewer) ── */
+  const pl=$('#pledge'); pl.value=store.get('dc-pledge')||''; pl.oninput=()=>store.set('dc-pledge',pl.value);
+
+  /* ── Video lightbox: only when opened as a standalone page; inside a framed viewer, links open YouTube ── */
+  const framed=(()=>{try{return window.self!==window.top}catch(e){return true}})();
+  const lb=$('#lb'), box=$('#lbBox');
+  function closeLb(){lb.classList.remove('open');box.innerHTML='';}
+  window.closeLb=closeLb;
+  if(!framed){
+    $$('.video[data-yt]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();
+      box.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0" title="影片" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      lb.classList.add('open');}));
+  }
+  $('#lbClose').onclick=closeLb; lb.onclick=e=>{if(e.target===lb)closeLb();};
+})();
+</script>
+</body>
+</html>
