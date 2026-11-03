@@ -290,6 +290,64 @@ table.cmp{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
 .lc h5::after{content:"↗";color:var(--clay);font-family:var(--f-body)}
 .lc p{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
 .lc .use{font-size:12px;color:var(--ink-soft);letter-spacing:.08em;margin-top:6px}
+/* ── Longevity quiz ── */
+.duo{display:grid;gap:22px}
+.duo-q{border-top:1px solid var(--line);padding-top:18px}
+.duo-q .q{font-family:var(--f-display);font-size:18px;letter-spacing:.06em}
+.duo-q .q small{display:block;font-family:var(--f-latin);font-style:italic;color:var(--clay);font-size:15px;margin-bottom:2px}
+.duo-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px;max-width:560px}
+.duo-opts button{border:1px solid var(--line);background:var(--card);border-radius:4px;padding:16px;font-family:var(--f-display);font-size:22px;cursor:pointer;transition:all .3s;font-variant-numeric:tabular-nums}
+.duo-opts button small{display:block;font-family:var(--f-body);font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+.duo-opts button:hover{border-color:var(--clay)}
+.duo-opts button.good{border-color:var(--sage);background:color-mix(in srgb,var(--sage) 18%,var(--card))}
+.duo-opts button.bad{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 14%,var(--card))}
+.trend{margin-top:22px}
+.chart-box{overflow-x:auto}
+.chart-box svg{display:block;width:100%;min-width:560px;height:auto}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);margin-top:8px}
+.legend i{display:inline-block;width:18px;height:2px;vertical-align:middle;margin-right:6px}
+/* ── Risk factors ── */
+section.ch.line-top{border-top:1px solid var(--line)}
+.rf{display:grid;gap:0;border-top:1px solid var(--line)}
+.rf-row{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr);gap:8px 22px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.rf-name{font-family:var(--f-display);font-size:16px;letter-spacing:.04em;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.rf-name .st{font-family:var(--f-body);font-size:11px;letter-spacing:.1em;padding:0 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft)}
+.rf-bar{display:flex;align-items:center;gap:10px}
+.rf-bar i{display:block;height:12px;border-radius:2px;background:var(--clay);min-width:2px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.rf-bar i.early{background:var(--rose)}.rf-bar i.mid{background:var(--clay)}.rf-bar i.late{background:var(--sage)}
+.rf-bar b{font-family:var(--f-display);font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink);min-width:2.6em}
+.rf-tip{grid-column:2;font-size:14px;color:var(--ink-soft);line-height:1.7}
+.rf-tip::before{content:"日常這樣做　";color:var(--clay);font-size:12px;letter-spacing:.1em}
+@media (max-width:640px){.rf-row{grid-template-columns:1fr}.rf-tip{grid-column:1}}
+.rf-sum{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0;font-family:var(--f-display);letter-spacing:.06em}
+.rf-sum b{color:var(--clay);font-size:22px;font-weight:500}
+.trait{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.trait .blk li b{font-weight:500;color:var(--ink)}
+.drug-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.dc{border:1px solid var(--line);background:var(--card);border-radius:4px;padding:22px;min-width:0}
+.dc h4{font-size:18px;letter-spacing:.08em}
+.dc .latin{font-size:14px;display:block;margin-top:2px}
+.dc dl{margin:14px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;font-size:14.5px}
+.dc dt{color:var(--ink-soft);white-space:nowrap}
+.dc dd{margin:0}
+.big-q{font-family:var(--f-display);font-size:clamp(20px,2.6vw,26px);letter-spacing:.08em;line-height:1.6;max-width:30em}
+.big-q em{font-style:normal;color:var(--clay)}
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font-family:var(--f-display);font-size:17px;letter-spacing:.05em;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:14px;font-size:24px;color:var(--clay);font-family:var(--f-body);font-weight:300;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 0 20px;max-width:var(--measure);font-size:15px}
+.faq .ans p+p,.faq .ans p+ul,.faq .ans ul+p{margin-top:.8em}
+.faq .ans ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.faq .ans ul li::marker{color:var(--clay)}
+.mini-tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;min-width:480px}
+.mini-tbl th,.mini-tbl td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.mini-tbl thead th{font-weight:500;color:var(--ink);border-bottom-color:var(--clay)}
+.mini-tbl td:first-child{white-space:nowrap}
+@media print{.trend[hidden]{display:block!important}.faq details{display:block}.faq .ans{display:block}}
+
 /* ── QR & speaker ── */
 .qr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center}
 .qr img{width:96px;height:96px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:4px;display:block}
@@ -365,6 +423,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
     <li><a href="#speaker"><span class="no">—</span><span class="nm">講師介紹</span><span class="tm">13:00</span></a></li>
     <li><a href="#intro"><span class="no">00</span><span class="nm">課程資訊</span><span class="tm">13:00</span></a></li>
     <li><a href="#understand"><span class="no">01</span><span class="nm">認識失智症</span><span class="tm">13:15</span></a></li>
+    <li><a href="#risk"><span class="no">01+</span><span class="nm">風險因子與治療</span><span class="tm">13:35</span></a></li>
     <li><a href="#recognize"><span class="no">02</span><span class="nm">早期辨識</span><span class="tm">13:55</span></a></li>
     <li><a href="#health"><span class="no">03</span><span class="nm">健康問題辨識</span><span class="tm">14:45</span></a></li>
     <li><a href="#safety"><span class="no">04</span><span class="nm">安全照護</span><span class="tm">15:25</span></a></li>
@@ -378,6 +437,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   <a href="#speaker"><span>講師介紹</span></a>
   <a href="#intro"><span>00 課程資訊</span></a>
   <a href="#understand"><span>01 認識失智症</span></a>
+  <a href="#risk"><span>01+ 風險與治療</span></a>
   <a href="#recognize"><span>02 早期辨識</span></a>
   <a href="#health"><span>03 健康問題辨識</span></a>
   <a href="#safety"><span>04 安全照護</span></a>
@@ -480,6 +540,16 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       <p class="goal">失智症不是單一疾病，而是一群症狀：記憶、語言、判斷、空間感等認知功能退化，嚴重到影響日常生活與人際互動。</p>
     </div>
 
+    <div class="sub reveal"><h3>暖身：二選一，你猜得到嗎？</h3><span class="latin">Warm-up Quiz</span></div>
+    <div class="duo reveal" id="duo"></div>
+    <div class="trend" id="trend" hidden>
+      <div class="sub" style="margin:36px 0 12px"><h3>近十年平均壽命趨勢</h3><span class="latin">Life Expectancy 2016–2025</span></div>
+      <div class="chart-box"><svg id="leChart" viewBox="0 0 720 320" role="img" aria-label="2016 到 2025 年台灣平均壽命折線圖，全體、男性、女性"></svg></div>
+      <div class="legend"><span><i style="background:var(--clay)"></i>女性</span><span><i style="background:var(--ink)"></i>男女合計</span><span><i style="background:var(--sage)"></i>男性</span></div>
+      <p class="note">十年來平均壽命大致上升，2020 年達高峰（81.32 歲）；2022 年受新冠疫情影響降到 79.84 歲，之後連續三年回升，2025 年為 81.27 歲。女性一直比男性多活約 7 歲。<b>活得更久，失智的人數也會跟著增加</b>，所以預防與照護更重要。</p>
+      <p class="src">資料來源：內政部 105–114 年簡易生命表；衛生福利部社會及家庭署 2026 年百歲人瑞統計；衛福部 2025 年人瑞統計。</p>
+    </div>
+
     <div class="stats reveal">
       <div class="stat"><div class="num">7.99<small>%</small></div><p>65 歲以上長者失智症盛行率，約每 12～13 位長者就有 1 位。</p></div>
       <div class="stat"><div class="num">17.53<small>%</small></div><p>65 歲以上輕度認知障礙（MCI）盛行率。這是介入、延緩的黃金時期。</p></div>
@@ -539,6 +609,154 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         <p>開場用的兩分半短片：一次看懂失智症是什麼、與老化的差別。</p>
         <p class="src-line">嘉義市政府衛生局 · YouTube</p>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 01+ Risk & treatment ───────── -->
+<section class="ch line-top" id="risk">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <span class="ch-no">01 · 延伸</span>
+      <h2>可預防的風險與治療</h2>
+      <span class="latin">Risk Factors, Personality &amp; Treatment</span>
+      <span class="time">13:15 – 13:55</span>
+      <p class="goal">2024 年《刺胳針》（The Lancet）失智症委員會指出，約 45% 的失智症與 14 項可改變的危險因子有關。下面每一條都是「從今天就能開始做」的事。</p>
+    </div>
+
+    <div class="sub reveal"><h3>14 項危險因子，各占多少？</h3><span class="latin">Population Attributable Fraction</span></div>
+    <div class="legend reveal" style="margin-bottom:14px"><span><i style="background:var(--rose);height:8px"></i>早年</span><span><i style="background:var(--clay);height:8px"></i>中年（約 45–65 歲）</span><span><i style="background:var(--sage);height:8px"></i>老年</span></div>
+    <div class="rf reveal" id="rf"></div>
+    <div class="rf-sum reveal"><span>14 項合計可預防比例</span><b>約 45%</b></div>
+    <p class="src">數字為「人口可歸因比例」：若完全消除該因子，全球失智症可減少的比例。Livingston G, et al. Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission. Lancet 2024;404:572–628。</p>
+
+    <div class="sub reveal"><h3>什麼樣的個性，比較容易失智？</h3><span class="latin">Personality &amp; Dementia Risk</span></div>
+    <div class="trait reveal">
+      <div class="blk">
+        <h4>風險較高 <span class="latin">Higher Risk</span></h4>
+        <ul>
+          <li><b>神經質（Neuroticism）高</b>：容易焦慮、緊張、擔心、情緒起伏大。多項統合分析都發現與較高的失智風險有關，是最一致的發現。</li>
+          <li><b>負向情緒多</b>：常感到生氣、悲傷、煩躁。</li>
+          <li><b>盡責性低</b>：做事較沒計畫、較難自律，也較少維持運動、規律就醫等好習慣。</li>
+          <li><b>長期壓力與孤單感</b>：慢性壓力荷爾蒙與社交退縮，都和認知退化相關。</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>風險較低 <span class="latin">Lower Risk</span></h4>
+        <ul>
+          <li><b>盡責性（Conscientiousness）高</b>：有條理、自律、做事負責。保護效果在研究中最明顯。</li>
+          <li><b>開放性（Openness）高</b>：好奇、喜歡學新東西、願意嘗試新經驗，累積較多「認知存款」。</li>
+          <li><b>外向性（Extraversion）高</b>：喜歡與人互動，社會參與多。</li>
+          <li><b>正向情緒與人生目標感</b>：常感到快樂、滿足，覺得生活有目標的人，失智風險較低。</li>
+          <li><b>親和性</b>：待人友善合作，部分研究有小幅保護效果。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note reveal"><b>怎麼解讀</b>　這些是「相關」而非「注定」。2024 年一項整合 8 個世代、超過 4 萬人的研究發現，個性與「被診斷失智」有關，但和死後大腦的病理變化關係不大，代表好個性可能讓大腦<b>更能承受</b>病變。個性會隨年齡慢慢改變，培養興趣、維持人際、練習情緒調適，都是在幫大腦存款。</p>
+    <p class="src">Terracciano A, et al. JAMA Psychiatry 2014；Aschwanden D, et al. Alzheimer's &amp; Dementia 2021；Beck ED, et al. Alzheimer's &amp; Dementia 2024；Boyle PA, et al. Arch Gen Psychiatry 2010。</p>
+
+    <div class="sub reveal"><h3>台灣有藥可以治療失智症嗎？</h3><span class="latin">Treatment in Taiwan</span></div>
+    <p class="big-q reveal">目前<em>沒有任何藥物可以治癒</em>失智症。現有藥物的目標是「穩定症狀」或「延緩惡化」。</p>
+    <div class="drug-cards reveal" style="margin-top:28px">
+      <div class="dc">
+        <h4>傳統症狀治療藥物</h4>
+        <span class="latin">Symptomatic Drugs · 健保給付</span>
+        <dl>
+          <dt>藥物</dt><dd>乙醯膽鹼酶抑制劑：愛憶欣（donepezil）、憶思能（rivastigmine，有貼片）、利憶靈（galantamine）；中重度可用憶必佳等 memantine。</dd>
+          <dt>作用</dt><dd>改善神經傳導，讓記憶、注意力、日常功能暫時穩定一段時間。</dd>
+          <dt>限制</dt><dd>不會停止大腦病變；健保需經醫師評估（如 MMSE、CDR）並定期追蹤。</dd>
+          <dt>副作用</dt><dd>噁心、食慾差、腹瀉、心跳變慢、頭暈。</dd>
+        </dl>
+      </div>
+      <div class="dc">
+        <h4>類澱粉蛋白單株抗體</h4>
+        <span class="latin">Anti-Amyloid Antibodies · 自費</span>
+        <dl>
+          <dt>藥物</dt><dd>樂意保 Leqembi（lecanemab）、欣智樂 Kisunla（donanemab），2025 年 3、4 月取得台灣藥證。</dd>
+          <dt>費用</dt><dd>目前自費，一個療程（約 18 個月）連同檢查，媒體報導約<b>新台幣 100–150 萬元以上</b>，各醫院不同。</dd>
+          <dt>效果</dt><dd>清除腦中類澱粉斑塊，臨床試驗中 18 個月的退化速度<b>減緩約 27%（Leqembi）到 35%（Kisunla，低中度 tau 族群）</b>，約等於多爭取 5–7 個月的較好狀態。<b>不能讓功能回復，也不是治癒。</b></dd>
+          <dt>適用</dt><dd>只限輕度認知障礙或輕度阿茲海默症，且須經 PET 或腦脊髓液確認有類澱粉沉積。</dd>
+          <dt>風險</dt><dd>類澱粉相關影像異常（ARIA）：腦水腫、微出血，需定期做 MRI；帶兩套 APOE4 基因者風險更高。</dd>
+          <dt>用法</dt><dd>Leqembi 每 2 週靜脈注射；Kisunla 每 4 週注射，斑塊清除後可停藥。</dd>
+        </dl>
+      </div>
+      <div class="dc">
+        <h4>非藥物治療一樣重要</h4>
+        <span class="latin">Non-Drug Care</span>
+        <dl>
+          <dt>認知</dt><dd>認知促進、懷舊活動、音樂、多感官刺激。</dd>
+          <dt>身體</dt><dd>規律有氧與肌力運動、控制三高、改善聽力視力。</dd>
+          <dt>社會</dt><dd>失智據點、日照中心、家屬支持團體。</dd>
+          <dt>行為</dt><dd>精神行為症狀優先用非藥物方法（如 DICE），必要時才用藥。</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note reveal"><b>給家屬的提醒</b>　百萬元新藥能爭取的是「慢一點」，前提是很早期就診斷。所以早期辨識（下一章的十大警訊與 AD8）比任何藥都更關鍵。是否適合用新藥，請與神經內科或精神科醫師詳細討論。</p>
+    <p class="src">van Dyck CH, et al. NEJM 2023（Clarity AD）；Sims JR, et al. JAMA 2023（TRAILBLAZER-ALZ 2）；台灣臨床失智症學會 Lecanemab 台灣適當用藥建議 2025；中央社、科技新報 2025 報導。費用與健保給付狀態以醫院與健保署最新公告為準。</p>
+
+    <div class="sub reveal"><h3>低密度膽固醇（LDL），該怎麼看？</h3><span class="latin">Making Sense of LDL</span></div>
+    <p class="prose reveal muted" style="margin-bottom:18px">LDL 是 14 項因子中的「中年」危險因子，約占 7%。《刺胳針》委員會建議約從 40 歲開始檢測並治療過高的 LDL。點開下列問題看說明。</p>
+    <div class="faq reveal">
+      <details>
+        <summary>為什麼台灣常看到 130，國際卻常說 100？</summary>
+        <div class="ans">
+          <p><b>兩個數字的用途不同。</b>130 是一般健檢報告的參考值，也是健保對「低風險、只有 1 項危險因子」者開始用藥的門檻；100 則是國際上公認的「理想值」，也是高風險者（例如糖尿病）要達到的目標。</p>
+          <p>現在台灣與國際都改成<b>「看個人風險決定目標」</b>：風險越高，目標越低。</p>
+          <div class="tbl-wrap"><table class="mini-tbl">
+            <thead><tr><th>風險等級（健保 2026 新制）</th><th>開始用藥</th><th>目標</th></tr></thead>
+            <tbody>
+              <tr><td>極高風險（如急性冠心症）</td><td>≥ 55</td><td>&lt; 55</td></tr>
+              <tr><td>非常高風險（如已有心血管疾病）</td><td>≥ 70</td><td>&lt; 70</td></tr>
+              <tr><td>高風險（如糖尿病）</td><td>≥ 100</td><td>&lt; 100</td></tr>
+              <tr><td>中風險（2 項以上危險因子）</td><td>≥ 115</td><td>&lt; 115</td></tr>
+              <tr><td>低風險（1 項危險因子）</td><td>≥ 130</td><td>&lt; 130</td></tr>
+              <tr><td>無危險因子</td><td>≥ 160</td><td>&lt; 160</td></tr>
+            </tbody>
+          </table></div>
+          <p>差異的原因：一是<b>參考值與治療目標</b>本來就是兩件事；二是每個人的<b>心血管風險不同</b>；三是<b>健保資源與成本效益</b>，低風險族群先從生活型態調整 3–6 個月開始。危險因子包括高血壓、男性 45 歲或女性 55 歲以上（或停經）、早發冠心病家族史、HDL 偏低、吸菸等。</p>
+          <p class="src">單位 mg/dL。分級依健保署降膽固醇藥物給付規定及《2025 台灣血脂管理臨床路徑共識》整理；實際適用請以健保署公告與醫師判斷為準。</p>
+        </div>
+      </details>
+      <details>
+        <summary>膽固醇高，是基因遺傳造成的嗎？</summary>
+        <div class="ans">
+          <p><b>一部分是。</b>雙胞胎與家族研究估計，LDL 高低約有一半與基因有關。</p>
+          <ul>
+            <li><b>家族性高膽固醇血症</b>：約每 250 人有 1 人，LDL 常在 190 以上，家族中有人 50 多歲前就心肌梗塞或中風。這類型飲食再控制也很難降下來，需要及早用藥。</li>
+            <li><b>多數人是「基因體質＋生活習慣」</b>：飽和脂肪（肥肉、豬油、奶油、椰子油）、反式脂肪、體重過重、缺乏運動都會推高 LDL。</li>
+            <li><b>其他疾病或藥物</b>：甲狀腺功能低下、腎病症候群、部分類固醇或利尿劑也會讓膽固醇升高，需先排除。</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>吃魚油可以預防膽固醇升高嗎？最有效的方法是什麼？</summary>
+        <div class="ans">
+          <p><b>魚油主要降的是三酸甘油酯，不是 LDL。</b>高劑量 omega-3 可降三酸甘油酯約 20–30%，但對 LDL 幾乎沒有幫助，含 DHA 的魚油甚至可能讓 LDL 小幅上升。一般保健品魚油用於預防心血管疾病，大型研究也沒有看到明顯效果。</p>
+          <p><b>最有效的是 statin 類藥物</b>，可降低 LDL 約 30–50% 以上。生活型態也有幫助，合計約可降 10–20%：</p>
+          <ul>
+            <li>減少飽和脂肪與反式脂肪：少肥肉、豬油、油炸、糕餅酥皮，烹調改用植物油</li>
+            <li>多吃可溶性纖維：燕麥、豆類、秋葵、蘋果，每天 5–10 公克可再降約 5%</li>
+            <li>每週 150 分鐘中等強度運動、減重 5–10%</li>
+            <li>吃魚很好，但重點是「用魚取代紅肉」，而不是另外補充魚油膠囊</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>健保藥物就夠了嗎？自費藥差在哪裡？該用哪一種？</summary>
+        <div class="ans">
+          <div class="tbl-wrap"><table class="mini-tbl">
+            <thead><tr><th>類別</th><th>常見藥物</th><th>LDL 降幅</th><th>給付</th></tr></thead>
+            <tbody>
+              <tr><td>Statin</td><td>立普妥（atorvastatin）、冠脂妥（rosuvastatin）、pitavastatin 等</td><td>中強度 30–49%；高強度 ≥ 50%</td><td>健保，第一線</td></tr>
+              <tr><td>Ezetimibe</td><td>怡妥，或與 statin 合併的複方</td><td>單用約 20%；加上 statin 再降約 20–25%</td><td>健保，第二線</td></tr>
+              <tr><td>PCSK9 抑制劑</td><td>瑞百安（evolocumab）、保脂通（alirocumab），皮下注射</td><td>再降約 50–60%</td><td>符合條件者健保（2025 年 9 月起門檻下修至 LDL ≥ 100，需先用過前兩線），其餘自費</td></tr>
+            </tbody>
+          </table></div>
+          <p><b>大多數人用健保的 statin（必要時加 ezetimibe）就能達標。</b>Statin 有最多降低心肌梗塞、中風與死亡的證據，是第一選擇。自費針劑適合極高風險、用足健保藥物仍未達標，或無法耐受 statin 的人。</p>
+          <p>常見迷思：statin「傷肝傷腎」。實際上嚴重副作用很少，少數人會肌肉痠痛，可與醫師討論換藥或調整劑量。<b>請勿自行停藥</b>，用什麼藥請依醫師評估個人風險決定。</p>
+          <p class="src">健保署降膽固醇藥物給付規定；中央社 2025/8/19 PCSK9 擴大給付報導；2018 AHA/ACC 與 2019 ESC/EAS 血脂指引。</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -979,7 +1197,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   if(store.get('dc-present')==='1') setPresent(true);
 
   /* ── Chapter navigation (keyboard + rail) ── */
-  const ids=['top','speaker','intro','understand','recognize','health','safety','care','resources','thanks'];
+  const ids=['top','speaker','intro','understand','risk','recognize','health','safety','care','resources','thanks'];
   const secs=ids.map(id=>document.getElementById(id));
   function current(){let c=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.35)c=i});return c;}
   function go(i){i=Math.max(0,Math.min(secs.length-1,i));secs[i].scrollIntoView({behavior:reduce?'auto':'smooth'});}
@@ -998,6 +1216,58 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   function tick(){const d=new Date(),n=d.getHours()*60+d.getMinutes();
     $$('#agenda .ag').forEach(r=>r.classList.toggle('is-now',n>=mins(r.dataset.s)&&n<mins(r.dataset.e)));}
   tick(); setInterval(tick,30000);
+
+  /* ── Longevity duo quiz ── */
+  const duo=[
+    ['目前台灣超過 100 歲的長者有幾位？',[['約 6,500 位','2026 年統計'],['約 1,200 位','']],0,'2026 年全台百歲人瑞共 6,489 位（滿百 2,490 位、超過百歲 3,999 位），比前一年增加 740 位、約 13%，首度突破 6 千人。'],
+    ['目前台灣有紀錄的最高齡長者是幾歲？',[['109 歲',''],['122 歲','']],1,'衛福部 2025 年統計，最高齡為臺北市 122 歲的女性長輩；男性最高齡為新北市 115 歲。'],
+    ['台灣目前的平均壽命是多少？',[['76.5 歲',''],['81.3 歲','']],1,'2025 年國人平均壽命 81.27 歲，女性 84.75 歲、男性 77.93 歲，比前一年增加 0.5 歲。下面是近十年的變化。'],
+  ];
+  $('#duo').innerHTML=duo.map((q,i)=>`<div class="duo-q"><p class="q"><small>Q${i+1}</small>${q[0]}</p><div class="duo-opts">${q[1].map((o,j)=>`<button type="button" data-q="${i}" data-o="${j}">${o[0]}</button>`).join('')}</div><p class="fb" id="duofb${i}"></p></div>`).join('');
+  $('#duo').onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.q,q=duo[i],ok=+b.dataset.o===q[2];
+    $$(`#duo button[data-q="${i}"]`).forEach(x=>x.classList.remove('good','bad'));
+    b.classList.add(ok?'good':'bad');$$(`#duo button[data-q="${i}"]`)[q[2]].classList.add('good');
+    const fb=$('#duofb'+i);fb.textContent=(ok?'答對了！':'答案是「'+q[1][q[2]][0]+'」。')+q[3];fb.classList.add('show');
+    if(i===2){$('#trend').hidden=false;drawLE();}};
+
+  function drawLE(){
+    const yrs=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+    const S=[['女性','var(--clay)',[83.42,83.70,84.05,84.23,84.75,84.25,83.28,83.74,84.30,84.75]],
+             ['合計','var(--ink)',[80.00,80.39,80.69,80.86,81.32,80.86,79.84,80.23,80.77,81.27]],
+             ['男性','var(--sage)',[76.81,77.28,77.55,77.69,78.11,77.67,76.63,76.94,77.42,77.93]]];
+    const L=56,R=640,T=20,B=280,y0=76,y1=86;
+    const X=i=>L+i*(R-L)/(yrs.length-1), Y=v=>B-(v-y0)/(y1-y0)*(B-T);
+    let g='';
+    for(let v=y0;v<=y1;v+=2) g+=`<line x1="${L}" x2="${R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-10}" y="${Y(v)+4}" text-anchor="end" font-size="12" fill="var(--ink-soft)">${v}</text>`;
+    yrs.forEach((y,i)=>g+=`<text x="${X(i)}" y="${B+22}" text-anchor="middle" font-size="12" fill="var(--ink-soft)">${y}</text>`);
+    S.forEach(([n,c,d])=>{
+      g+=`<polyline fill="none" stroke="${c}" stroke-width="2" points="${d.map((v,i)=>X(i)+','+Y(v)).join(' ')}"/>`;
+      d.forEach((v,i)=>g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="${i===9||i===4||i===6?4:2.5}" fill="${c}"><title>${yrs[i]} ${n} ${v.toFixed(2)} 歲</title></circle>`);
+      g+=`<text x="${X(9)+10}" y="${Y(d[9])+4}" font-size="12" fill="${c}">${n} ${d[9].toFixed(2)}</text>`;
+    });
+    g+=`<text x="${X(6)}" y="${Y(79.84)+20}" text-anchor="middle" font-size="11" fill="var(--ink-soft)">疫情低點 79.84</text>`;
+    $('#leChart').innerHTML=g;
+  }
+
+  /* ── 14 risk factors (Lancet 2024) ── */
+  const rf=[
+    ['教育程度較低','early','早年',5,'終身學習：社區大學、樂齡中心、學新才藝，讓大腦持續接受新刺激。'],
+    ['聽力受損','mid','中年',7,'定期聽力檢查，需要時配戴助聽器；避免長時間處在噪音中。'],
+    ['LDL 膽固醇偏高','mid','中年',7,'40 歲起定期驗血脂，少飽和脂肪與反式脂肪，需要時遵醫囑用藥。'],
+    ['憂鬱','mid','中年',3,'情緒低落超過兩週要求助；維持規律作息、日曬、運動與人際連結。'],
+    ['頭部外傷','mid','中年',3,'騎車戴安全帽、開車繫安全帶，居家防跌，避免頭部撞擊的運動。'],
+    ['缺乏運動','mid','中年',2,'每週 150 分鐘中等強度運動，加上 2 次肌力訓練，日常多走路、少久坐。'],
+    ['糖尿病','mid','中年',2,'控制醣類與體重，定期驗血糖與糖化血色素，按時服藥。'],
+    ['吸菸','mid','中年',2,'戒菸任何年齡都有效，可利用戒菸專線 0800-636-363 與戒菸門診。'],
+    ['高血壓','mid','中年',2,'中年起把收縮壓控制在 130 以下，在家量血壓，少鹽飲食。'],
+    ['肥胖','mid','中年',1,'維持腰圍男性 < 90、女性 < 80 公分，均衡飲食搭配運動。'],
+    ['過量飲酒','mid','中年',1,'每週酒精超過約 168 公克（約 17 份 10 公克標準杯）會增加風險，能少喝就少喝。'],
+    ['社交孤立','late','老年',5,'參加社區據點、志工、宗教或興趣團體，每天和人說說話。'],
+    ['空氣污染','late','老年',3,'空品不佳時減少戶外活動、戴口罩，室內注意通風與空氣清淨。'],
+    ['視力受損未矯正','late','老年',2,'定期檢查眼睛，白內障及早治療，配戴合適的眼鏡。'],
+  ];
+  const mx=7;
+  $('#rf').innerHTML=rf.map(([n,c,s,p,t])=>`<div class="rf-row"><div class="rf-name">${n}<span class="st">${s}</span></div><div class="rf-bar"><i class="${c}" style="width:calc(${p/mx} * (100% - 3.6em))"></i><b>${p}%</b></div><p class="rf-tip">${t}</p></div>`).join('');
 
   /* ── Ten warning signs ── */
   const signs=[
