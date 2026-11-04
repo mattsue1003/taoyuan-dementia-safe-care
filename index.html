@@ -401,6 +401,16 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   .sign .more{display:block}.sign .hint{display:none}
   .reveal{animation:none!important;opacity:1!important;transform:none!important}
 }
+.pic-fig{margin:0}
+.pic-fig img{width:100%;border-radius:4px;border:1px solid var(--line);display:block}
+.ess8{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.ess8 div{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px 16px}
+.ess8 b{display:block;font-family:var(--f-display);font-weight:500;letter-spacing:.08em}
+.ess8 span{font-size:13.5px;color:var(--ink-soft)}
+.qline{display:flex;align-items:center;gap:10px;margin-top:10px}
+.qline img{width:72px;height:72px;flex:none;padding:4px;background:#fff;border:1px solid var(--line);border-radius:3px;position:static;filter:none!important;transform:none!important}
+.qline span{font-size:12px;color:var(--ink-soft);letter-spacing:.06em}
+.r .qline{margin-top:12px}
 </style>
 </head>
 <body>
@@ -640,12 +650,14 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         <h4>阿嬤的大腦迷宮</h4>
         <p>可愛的動畫帶大家走進失智者的大腦，看懂為什麼會忘東忘西、迷路。適合開場暖身。</p>
         <p class="src-line">新北市政府衛生局 · YouTube</p>
+        <div class="qline"><img src="qr/yt-EH-CQfTk4_Q.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
       <a class="video" href="https://www.youtube.com/watch?v=Rs1bUeBBRKs" target="_blank" rel="noopener" data-yt="Rs1bUeBBRKs">
         <div class="frame"><img src="https://i.ytimg.com/vi/Rs1bUeBBRKs/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">5:42</span><span class="vtag fun">有趣好玩</span></div>
         <h4>失智咖啡廳：送錯咖啡我招待！</h4>
         <p>由失智長輩當店員的咖啡廳，點錯、送錯都沒關係。笑中帶淚，討論「友善」是什麼。</p>
         <p class="src-line">三立新聞 人生驚嘆號 · YouTube</p>
+        <div class="qline"><img src="qr/yt-Rs1bUeBBRKs.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
     </div>
   </div>
@@ -736,18 +748,21 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         <h4>刺胳針：14 項失智風險因子</h4>
         <p>公視整理 2024 年《刺胳針》報告，聽力、視力、膽固醇與飲食的重點建議。</p>
         <p class="src-line">公視晚間新聞 · YouTube</p>
+        <div class="qline"><img src="qr/yt--P1uyU-eQhQ.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
       <a class="video" href="https://www.youtube.com/watch?v=IyveM-LbE4s" target="_blank" rel="noopener" data-yt="IyveM-LbE4s">
         <div class="frame"><img src="https://i.ytimg.com/vi/IyveM-LbE4s/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">2:02</span><span class="vtag new">最新研究</span></div>
         <h4>失智新藥全台第一針</h4>
         <p>83 歲長輩施打欣智樂，18 個月療程 150 萬元。醫師說明：延緩退化，不是逆轉記憶。</p>
         <p class="src-line">TVBS 新聞 · YouTube</p>
+        <div class="qline"><img src="qr/yt-IyveM-LbE4s.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
       <a class="video" href="https://www.youtube.com/watch?v=gvDg3C2bob0" target="_blank" rel="noopener" data-yt="gvDg3C2bob0">
         <div class="frame"><img src="https://i.ytimg.com/vi/gvDg3C2bob0/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">9:09</span><span class="vtag new">最新研究</span></div>
         <h4>兩種阿茲海默症新藥的介紹與比較</h4>
         <p>邱銘章醫師完整說明樂意保與欣智樂的適用對象、效果與 ARIA 副作用。課後延伸觀看。</p>
         <p class="src-line">憶安神經科診所 · YouTube</p>
+        <div class="qline"><img src="qr/yt-gvDg3C2bob0.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
     </div>
     <p class="src">van Dyck CH, et al. NEJM 2023（Clarity AD）；Sims JR, et al. JAMA 2023（TRAILBLAZER-ALZ 2）；台灣臨床失智症學會 Lecanemab 台灣適當用藥建議 2025；中央社、科技新報 2025 報導。費用與健保給付狀態以醫院與健保署最新公告為準。</p>
@@ -839,12 +854,14 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         <h4>抽血就能預測失智？</h4>
         <p>2026 最新研究：血液檢測可預測長者未來 5–10 年罹患阿茲海默症的風險，以及目前的限制。</p>
         <p class="src-line">大愛新聞 · YouTube</p>
+        <div class="qline"><img src="qr/yt-ssq32Vb0Fl0.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
       <a class="video" href="https://www.youtube.com/watch?v=sY6JD9XUMRk" target="_blank" rel="noopener" data-yt="sY6JD9XUMRk">
         <div class="frame"><img src="https://i.ytimg.com/vi/sY6JD9XUMRk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">4:22</span><span class="vtag new">最新研究</span></div>
         <h4>台灣研究：抽血驗出早期阿茲海默症</h4>
         <p>臺北榮總與韓國合作，以血液檢測篩出高風險族群，準確率約九成。對照 AD8 談早期辨識。</p>
         <p class="src-line">TVBS 十點不一樣 · YouTube</p>
+        <div class="qline"><img src="qr/yt-sY6JD9XUMRk.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
     </div>
 
@@ -1119,36 +1136,67 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
     </div>
     <p class="src reveal">衛生福利部長照 3.0 智慧科技輔具租賃（2026 年 7 月 1 日上路，查詢 ltcat.mohw.gov.tw）；Apple「尋找」網路與物品安全提醒說明。產品功能與補助資格以官方資料庫與 1966 評估為準。</p>
 
-    <div class="sub reveal"><h3>用藥與用火用電</h3><span class="latin">Medication &amp; Fire Safety</span></div>
-    <div class="cols reveal">
-      <div class="blk">
-        <h4>用藥安全</h4>
-        <ul>
-          <li>使用分格藥盒，由照顧者每週備藥</li>
-          <li>盡量固定同一家藥局，方便查核重複用藥</li>
-          <li>不自行增減或停藥，回診時帶藥袋給醫師看</li>
-          <li>安眠鎮靜藥會增加跌倒與混亂風險，有疑問先問醫師或藥師</li>
-          <li>藥品收在長輩拿不到的地方</li>
-        </ul>
-      </div>
-      <div class="blk">
-        <h4>用火用電</h4>
-        <ul>
-          <li>換裝有自動熄火裝置的瓦斯爐，或改用電磁爐</li>
-          <li>安裝住宅用火災警報器</li>
-          <li>電暖器、熱水瓶放在不易碰倒的位置</li>
-          <li>熱水器設定在 50°C 以下，避免燙傷</li>
-        </ul>
-      </div>
-      <div class="blk">
-        <h4>開車與財務</h4>
-        <ul>
-          <li>出現迷路或判斷力下降時，與家屬、醫師討論停止駕駛</li>
-          <li>留意詐騙電話與推銷，必要時設定提款限額</li>
-          <li>趁早討論意定監護、輔助宣告等法律安排</li>
-        </ul>
-      </div>
+    <div class="sub reveal"><h3>用火安全：輔具怎麼選？</h3><span class="latin">Cooking &amp; Fire Safety</span></div>
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>輔具</th><th>做什麼</th><th>優點</th><th>限制與注意</th></tr></thead>
+        <tbody>
+          <tr><th>瓦斯爐熄火安全裝置</th><td>火被湯溢出或風吹熄時，自動切斷瓦斯</td><td>新式瓦斯爐多已內建，防瓦斯外洩</td><td><b>忘記關火時不會自己關</b>，防不了乾燒起火</td></tr>
+          <tr><th>定時熄火／防乾燒瓦斯爐</th><td>設定時間到或鍋底溫度過高時自動關火</td><td>直接解決「忘記關火」</td><td>需換新爐；長輩要會設定，或由家人預設</td></tr>
+          <tr><th>外掛瓦斯定時關閉器</th><td>裝在瓦斯開關上，轉開後時間到自動關閉瓦斯</td><td>不用換爐，價格較低</td><td>需專業安裝；長輩可能自行拆除或重新轉開</td></tr>
+          <tr><th>瓦斯漏氣警報器＋自動遮斷閥</th><td>偵測到瓦斯外洩就警報並關閉總開關</td><td>防外洩與一氧化碳風險</td><td>不偵測乾燒；要定期測試</td></tr>
+          <tr><th>電磁爐（IH 爐）</th><td>沒有明火，鍋子拿起、過熱或定時到會自動斷電</td><td>不會點燃衣袖、沒有瓦斯外洩，<b>整體比瓦斯爐安全</b></td><td>要換適用鍋具；關掉後爐面仍燙；中度以上長輩可能學不會，或以為「沒開火」而去摸</td></tr>
+          <tr><th>住宅用火災警報器</th><td>偵測煙霧或高溫並發出警報</td><td>依法每戶都應裝設，最基本的保護</td><td>獨居長輩聽到警報也可能不知怎麼辦，可選能連動通知家人的款式</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>IH 爐怎麼換才順利 <span class="latin">Switching</span></h4><ul><li><b>趁輕度就換</b>，長輩還學得會新東西</li><li>只留常用的一兩個按鍵，其他用貼紙蓋住，貼上大字「開／關」</li><li>鍋具同時換好，舊瓦斯爐移走，避免兩套混用</li><li>中度以上若已學不會，改由家人備餐或送餐，爐具加裝總開關</li></ul></div>
+      <div class="blk"><h4>用電安全 <span class="latin">Electrical</span></h4><ul><li>電暖器選傾倒自動斷電、過熱保護的款式</li><li>熱水瓶、電熨斗選自動斷電型</li><li>延長線要有過載保護，不串接</li><li>智慧插座：家人可用手機遠端關閉、設定時段斷電</li><li>熱水器設在 50°C 以下，瓦斯熱水器加裝一氧化碳警報器</li></ul></div>
+      <div class="blk"><h4>環境與習慣 <span class="latin">Routines</span></h4><ul><li>廚房動作感應器：長時間有人開火、沒人在場就通知家人</li><li>煮東西時不離開廚房，可用計時器提醒</li><li>瓦斯總開關貼上醒目標示，出門前一起檢查</li><li>獨居長輩可洽當地消防局，部分縣市免費發放或安裝住警器</li></ul></div>
+    </div>
+    <p class="note reveal"><b>補助查證</b>　目前長照輔具給付與 2026 年 7 月上路的智慧科技輔具租賃（首批 17 項）都<b>沒有自動熄火爐具或瓦斯遮斷器</b>的品項，需自費。住警器可問消防局，其他項目請先撥 1966 詢問各縣市自辦補助。</p>
+
+    <div class="sub reveal"><h3>用藥安全</h3><span class="latin">Medication Safety</span></div>
+    <div class="cols reveal">
+      <div class="blk"><h4>基本原則 <span class="latin">Basics</span></h4><ul><li>分格藥盒，由照顧者每週備藥</li><li>固定同一家藥局領藥，查核重複用藥</li><li>不自行增減或停藥，回診帶藥袋給醫師看</li><li>安眠鎮靜藥增加跌倒與混亂風險，有疑問先問醫師或藥師</li><li>藥品收在長輩拿不到的地方，只放當天的量在外面</li></ul></div>
+      <div class="blk"><h4>依程度選藥盒 <span class="latin">Pill Boxes</span></h4><ul><li><b>輕度</b>：大格分時藥盒＋手機鬧鐘，還能自己吃</li><li><b>輕中度</b>：電子提醒藥盒，時間到會響、亮燈，有些會通知家人「還沒吃」</li><li><b>中度以上</b>：上鎖自動出藥機，一次只開一格，防止重複吃或一次吃光</li><li>貼片藥（如失智症藥物貼片）寫上日期，撕舊再貼新</li></ul></div>
+      <div class="blk"><h4>藥盒有補助嗎？ <span class="latin">Subsidy</span></h4><ul><li>查過衛福部長照輔具給付、身障輔具補助與 2026 年 7 月智慧科技輔具首批 17 項：<b>都沒有藥盒品項，電子藥盒也沒有</b></li><li>您記得的補助可能是縣市或計畫性發放，各地不同，請撥 1966 或洽輔具資源中心確認</li><li>藥師居家訪視可協助整理藥物、簡化服藥次數</li></ul></div>
+    </div>
+
+    <div class="sub reveal"><h3>開車：怎麼跟長輩談？</h3><span class="latin">Talking About Driving</span></div>
+    <p class="prose reveal">開車對很多長輩代表自由、能力與尊嚴，直接說「你不能開了」通常只會引起爭吵。台灣失智症協會與澳洲臥龍崗大學合作翻譯的《失智症與安全駕駛決策輔助手冊》，就是讓長輩<b>自己參與決定</b>的工具：一起看警訊、一起評估、一起規劃替代交通。</p>
+    <ol class="steps reveal">
+      <li><b>及早談、一起約定</b><p>確診時、還在輕度就談。先約好「出現哪些狀況就停」，越晚談越難接受。</p></li>
+      <li><b>一起看警訊</b><p>在熟悉路段迷路、變換車道困難、分不清油門煞車、車身多了刮痕、常被開罰單。用手冊一起自我檢核。</p></li>
+      <li><b>請信任的人說</b><p>由醫師、職能治療師的駕駛評估結果來說，或請長輩尊敬的親友出面，家人不必當壞人。</p></li>
+      <li><b>談安全，不談能力</b><p>先肯定他開了幾十年的貢獻；說「我們擔心你被別人撞」「萬一撞到小孩」，而不是「你老了、你不行」。</p></li>
+      <li><b>先安排替代交通</b><p>家人輪流接送、長照交通接送、計程車或叫車 App、社區共乘。讓他照樣去市場、去廟口、去據點。</p></li>
+      <li><b>漸進減少</b><p>先停夜間、雨天、高速公路與遠路，再到完全停止。</p></li>
+      <li><b>最後手段</b><p>仍堅持開車且有危險時，才考慮保管鑰匙、把車移走或賣車，並和醫師討論。</p></li>
+      <li><b>停開後顧心情</b><p>台灣研究發現停止駕駛的失智長輩憂鬱、焦慮較高，要安排社會參與、留意情緒。</p></li>
+    </ol>
+    <p class="note reveal"><b>法規提醒</b>　依交通部規定，75 歲以上駕駛人每 3 年要換照，需體檢合格並通過認知功能測驗。但這只是最低門檻，通過測驗不代表失智長輩可以安全開車。</p>
+    <p class="src reveal">台灣失智症協會、澳洲臥龍崗大學《失智症與安全駕駛決策輔助手冊》（Dementia and Driving Decision Aid）；Alzheimer Society of BC. Conversations about dementia and driving。</p>
+
+    <div class="sub reveal"><h3>預防詐騙：法律與財務防護</h3><span class="latin">Protecting Against Fraud</span></div>
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>工具</th><th>適合誰</th><th>怎麼防詐</th><th>要知道的限制</th></tr></thead>
+        <tbody>
+          <tr><th>安養信託</th><td>任何階段，<b>越早越好</b></td><td>錢交給銀行管理，每月固定撥生活費；大額動用需信託監察人同意。<b>簽約後馬上生效</b></td><td>有管理費；只保護放進信託的財產，手邊現金與其他帳戶仍可能被騙</td></tr>
+          <tr><th>意定監護</th><td>還清楚時，想自己決定「將來誰照顧我」</td><td>預先指定信任的人（可以不是親屬），並約定權限</td><td>需公證；<b>簽了不會馬上生效</b>，要等法院監護宣告後才啟動，本身擋不住現在的詐騙</td></tr>
+          <tr><th>輔助宣告</th><td>輕度、判斷力已經下降</td><td>借錢、當保證人、買賣不動產等重要行為，要經輔助人同意，否則無效</td><td>需向法院聲請，約 3–6 個月；日常小額消費與交出現金仍擋不住</td></tr>
+          <tr><th>監護宣告</th><td>中重度、已無法判斷自己行為的後果</td><td>由監護人代為處理法律與財產行為，長輩自己簽的契約無效</td><td>長輩失去法律上的自主，也不能再立遺囑；處分不動產須經法院許可</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>怎麼搭配 <span class="latin">Combine</span></h4><ul><li><b>清楚時</b>：意定監護＋安養信託一起做</li><li><b>輕度</b>：再加輔助宣告，鎖住大額財產</li><li><b>中重度</b>：聲請監護宣告，由意定監護人接手</li><li>醫師確診不等於法院宣告，宣告前長輩簽的契約原則上仍有效，所以要提早規劃</li></ul></div>
+      <div class="blk"><h4>日常防護 <span class="latin">Everyday</span></h4><ul><li>設定提款與轉帳限額，關閉不需要的網路銀行</li><li>帳戶異動簡訊同時通知家人</li><li>向聯徵中心申請註記，防止被冒名開戶、貸款</li><li>地政事務所申請「地籍異動即時通」，不動產有變動馬上通知</li><li>電話開啟陌生來電過濾，家中貼上 165 反詐騙專線</li></ul></div>
+      <div class="blk"><h4>和長輩怎麼說 <span class="latin">Talking</span></h4><ul><li>說「保護你的錢不被騙」，不說「你不會管錢」</li><li>留一點零用錢讓他自己支配，保有尊嚴</li><li>和常去的銀行、里長、店家打招呼，請他們多留意</li></ul></div>
+    </div>
+    <p class="src reveal">民法第 14、15-1、15-2、1113-2 條；律師與信託業者專欄整理。實際規劃請諮詢律師、公證人或銀行信託部。</p>
   </div>
 </section>
 
@@ -1195,6 +1243,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         <h4>邀阿公阿嬤拍 B 級殭屍片</h4>
         <p>導演帶著失智長輩拍殭屍電影，長輩演得超投入。看見「有角色、有參與」就是最好的復能。</p>
         <p class="src-line">TVBS FOCUS 全球新聞 · YouTube</p>
+        <div class="qline"><img src="qr/yt-BjtkGkDVOkA.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
     </div>
 
@@ -1218,7 +1267,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
     </div>
     <div class="cols reveal" style="margin-top:28px">
       <div class="blk"><h4>友善環境 <span class="latin">Environment</span></h4><ul><li>標示、對比色、照明，讓長輩「看得懂家」</li><li>減少選擇與干擾：衣櫃只放當季衣物</li><li>社區友善：店家、鄰里知道怎麼協助</li></ul></div>
-      <div class="blk"><h4>友善輔具 <span class="latin">Assistive Tech</span></h4><ul><li>大字時鐘、日曆、藥盒提醒</li><li>自動熄火爐具、感應夜燈</li><li>定位鞋墊、電子圍籬（見 04 章）</li></ul></div>
+      <div class="blk"><h4>友善輔具 <span class="latin">Assistive Tech</span></h4><ul><li>大字時鐘、日曆、藥盒提醒</li><li>定時熄火爐具或 IH 爐、感應夜燈</li><li>定位鞋墊、電子圍籬（見 04 章）</li></ul></div>
       <div class="blk"><h4>策略支援 <span class="latin">Strategies</span></h4><ul><li>無錯誤學習：一開始就做對，不讓長輩猜</li><li>間隔提取：間隔拉長的反覆提醒</li><li>步驟拆解與提示階梯（下方）</li></ul></div>
     </div>
     <p class="note reveal"><b>結論</b>　研究支持您的看法：單純的認知訓練對失智長輩的日常生活幫助有限；真正讓長輩「做得到」的，是<b>以生活目標為核心，搭配友善環境、輔具與照顧策略</b>。訓練仍有價值，但要放在真實情境中練，練的是長輩在乎的事。</p>
@@ -1335,18 +1384,91 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
         </ul>
       </div>
     </div>
+
+    <div class="sub reveal"><h3>心臟血管：99% 早就有警訊</h3><span class="latin">Heart &amp; Vessels</span></div>
+    <div class="split reveal">
+      <figure class="pic-fig"><img src="img/ot-cvd-warning.jpg" alt="100 個心臟病人有 99 個早就有警訊" loading="lazy"></figure>
+      <div class="prose">
+        <p>2025 年《美國心臟病學會期刊》追蹤韓國與美國 <b>930 萬人</b>：心肌梗塞、心臟衰竭、中風發生前，<b>99% 以上</b>的人早就有至少一項警訊（血壓、膽固醇、血糖、吸菸），而且超過九成的人不只一項。</p>
+        <p>這四個警訊，也正是失智症的危險因子。<b>顧心臟，就是顧大腦</b>；血管型失智症更直接來自腦血管的損傷。</p>
+      </div>
+    </div>
+    <div class="split reveal" style="margin-top:28px">
+      <div class="prose">
+        <h4 style="font-size:17px;letter-spacing:.1em;margin-bottom:10px">自我檢查：四個警訊，你有幾項？</h4>
+        <div class="checks hp-checks">
+          <label><input type="checkbox"> <span><b>血壓</b>　常常超過 120 / 80</span></label>
+          <label><input type="checkbox"> <span><b>膽固醇</b>　總膽固醇超過 200</span></label>
+          <label><input type="checkbox"> <span><b>血糖</b>　空腹血糖超過 100</span></label>
+          <label><input type="checkbox"> <span><b>吸菸</b>　現在有抽，或曾經抽過</span></label>
+        </div>
+        <p class="note" style="margin-top:16px"><b>「正常」不等於「理想」</b>　很多人的數字超過理想值，只因為還沒到診斷標準，就以為沒事。不知道自己的數字？下次健檢先記下來。</p>
+      </div>
+      <figure class="pic-fig"><img src="img/ot-cvd-ideal.jpg" alt="四個警訊：理想值與通常到這才處理的數值比較" loading="lazy"></figure>
+    </div>
+
+    <div class="sub reveal"><h3>健康八要素，你做到幾項？</h3><span class="latin">Life's Essential 8</span><span class="tag">美國心臟協會</span></div>
+    <div class="ess8 reveal">
+      <div><b>血壓</b><span>120 / 80 以下</span></div><div><b>血脂</b><span>膽固醇控制好</span></div><div><b>血糖</b><span>空腹 100 以下</span></div><div><b>不吸菸</b><span>也避開二手菸</span></div>
+      <div><b>健康飲食</b><span>蔬果、全穀、少加工</span></div><div><b>規律活動</b><span>每週 150 分鐘</span></div><div><b>健康體重</b><span>維持合適 BMI</span></div><div><b>睡眠充足</b><span>每晚 7–9 小時</span></div>
+    </div>
+    <div class="qr reveal" style="margin-top:22px"><img src="qr/health8.svg" alt="健康八要素網頁 QR Code"><div><b>健康八要素完整做法</b><span>每一項的做法與研究證據</span><br><a href="https://mattsue1003.github.io/health-education-8/" target="_blank" rel="noopener" style="font-size:13px">mattsue1003.github.io/health-education-8 ↗</a></div></div>
+    <p class="src reveal">Lee H, et al. J Am Coll Cardiol 2025（930 萬人追蹤）；American Heart Association. Life's Essential 8, 2022。理想值是否需要處理，請與醫師討論。</p>
+
+    <div class="sub reveal"><h3>失智長輩的三高怎麼管？</h3><span class="latin">BP, Sugar &amp; Lipids in Dementia</span></div>
+    <p class="prose reveal">三高控制好可以<b>降低失智風險、減緩血管型失智惡化</b>；但已經失智的長輩，最大的危險常常變成<b>控制過頭</b>：血壓太低會頭暈跌倒，血糖太低會突然更混亂。目標要跟著病程與身體狀況調整。</p>
+    <div class="tbl-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th></th><th>為什麼重要</th><th>失智後的目標</th><th>失智帶來的困難</th><th>照顧怎麼做</th></tr></thead>
+        <tbody>
+          <tr><th>血壓</th><td>SPRINT MIND 試驗：積極降壓可減少輕度認知障礙；Lancet 建議中年起收縮壓控制在 130 以下</td><td>輕度、身體健康：依醫師目標（多為 130/80 以下）。衰弱或中重度：<b>避免太低</b>，重點是不頭暈、不跌倒</td><td>忘記吃或重複吃；說不出頭暈；起身太快、喝水不足造成姿勢性低血壓</td><td>家屬協助量「722」家庭血壓；起身前先坐 30 秒；體重下降、吃不多時，請醫師重新檢視降壓藥</td></tr>
+          <tr><th>血糖</th><td>糖尿病增加失智風險；反覆<b>低血糖</b>會傷大腦、讓認知更差</td><td>健康長者糖化血色素約 7.0–7.5%；中重度失智或衰弱可放寬到 <b>8.0% 以下</b>，以避免低血糖為優先</td><td>認不出低血糖症狀、說不清楚；吃飯量不穩定；忘記打針或重複打</td><td>突然冒汗、躁動、比平常更混亂，<b>先測血糖</b>；飯量少時與醫師討論調整；請醫師簡化成低血糖風險較低的藥</td></tr>
+          <tr><th>血脂</th><td>中年 LDL 過高是 14 項危險因子之一（見 01+ 章）</td><td>依心血管風險由醫師決定；末期以舒適為主，可討論停藥</td><td>藥物太多、吞嚥困難</td><td>他汀類藥物目前研究不支持會造成失智；與其他藥物整合成一天一次</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>簡化用藥 <span class="latin">Simplify</span></h4><ul><li>請醫師把藥整合成一天一到兩次</li><li>用藥盒、提醒器，由家屬備藥（見 04 章）</li><li>每次回診帶藥袋與血壓、血糖紀錄</li></ul></div>
+      <div class="blk"><h4>照顧者記錄 <span class="latin">Record</span></h4><ul><li>血壓：722 原則，連續 7 天、早晚各 2 次</li><li>血糖、飲食量、體重一起記</li><li>出現頭暈、跌倒、混亂加重，記下時間告訴醫師</li></ul></div>
+      <div class="blk"><h4>依病程調整 <span class="latin">By Stage</span></h4><ul><li><b>輕度</b>：積極控制，延緩惡化</li><li><b>中度</b>：控制與安全並重，防低血壓、低血糖</li><li><b>重度</b>：以舒適為主，和醫師討論減藥</li></ul></div>
+    </div>
+    <p class="src reveal">SPRINT MIND Investigators. JAMA 2019；Livingston G, et al. Lancet 2024；American Diabetes Association. Standards of Care: Older Adults 2025；台灣高血壓學會 2022 指引（722 家庭血壓量測）。</p>
+
+    <div class="sub reveal"><h3>痠痛：為什麼 45–64 歲是疼痛高峰？</h3><span class="latin">Aches &amp; Pain</span></div>
+    <div class="split reveal">
+      <figure class="pic-fig"><img src="img/ot-pain-peak.jpg" alt="疼痛高峰期 45–64 歲插圖" loading="lazy"></figure>
+      <div class="prose">
+        <p>關鍵往往不在年齡，而在<b>身體怎麼用</b>。照顧者正好多在這個年紀，常常一邊照顧長輩、一邊腰痠背痛。</p>
+        <ol class="ladder">
+          <li><span class="lv">1</span><p><b>久坐＋低頭看螢幕</b>：每天長時間累積</p></li>
+          <li><span class="lv">2</span><p><b>肌肉一邊緊繃、一邊無力</b>：上交叉、下交叉症候群</p></li>
+          <li><span class="lv">3</span><p><b>關節活動度下降</b>：組織缺氧，修復跟不上消耗</p></li>
+          <li><span class="lv">4</span><p><b>出現疼痛，更不敢動</b>：肌力再下滑，回到第一步</p></li>
+        </ol>
+      </div>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>影響最大的五個因子 <span class="latin">Top 5</span></h4><ul><li><b>久坐時間</b>：越久風險越高，6 小時以上最高</li><li><b>低頭滑手機</b>：風險比用電腦更高</li><li><b>肥胖、代謝症候群</b>：和下背痛有因果關係</li><li><b>睡不好、壓力大</b>：放大痛覺，形成惡性循環</li><li><b>缺乏規律運動</b>：少了保護，痠痛更容易復發</li></ul></div>
+      <div class="blk"><h4>哪種運動最有效？ <span class="latin">Exercise</span></h4><ul><li><b>最推薦</b>：肌力訓練（預防頸痛最有力）、有氧＋肌力的複合運動</li><li><b>重要</b>：有氧運動，重點是規律累積，分次做也可以</li><li><b>配角</b>：伸展改善緊繃，但單獨預防力較弱</li><li><b>短期輔助</b>：按摩放鬆有感，但不能取代主動運動</li></ul></div>
+      <div class="blk"><h4>給照顧者與長輩 <span class="latin">For Carers</span></h4><ul><li>移位、翻身用對姿勢與輔具，不靠腰力硬抬</li><li>每坐 30–60 分鐘起來動一動</li><li>帶長輩一起做坐姿肌力運動，兩個人都受惠</li><li>疼痛持續或加劇，請找醫師或物理治療師</li></ul></div>
+    </div>
+    <div class="qr reveal" style="margin-top:22px"><img src="qr/sore-db.svg" alt="痠痛問題影片學習資料庫 QR Code"><div><b>痠痛問題影片學習資料庫</b><span>46 種常見痠痛問題 × 物理治療師、醫師示範影片</span><br><a href="https://mattsue1003.github.io/bodysoreproblemlearn/" target="_blank" rel="noopener" style="font-size:13px">mattsue1003.github.io/bodysoreproblemlearn ↗</a></div></div>
+    <p class="src reveal">BMC Public Health 2025；代謝症候群與下背痛孟德爾隨機化研究；JOSPT 2022、2023；Frontiers 2025 下背痛運動網絡統合分析；2018 美國身體活動指南。</p>
+
     <div class="videos reveal">
       <a class="video" href="https://www.youtube.com/watch?v=tCGLwR9NbFo" target="_blank" rel="noopener" data-yt="tCGLwR9NbFo">
         <div class="frame"><img src="https://i.ytimg.com/vi/tCGLwR9NbFo/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">1:37</span><span class="vtag fun">有趣好玩</span></div>
         <h4>「我的餐盤」口訣歌帶動跳（長者版）</h4>
         <p>國健署的健康口訣歌，可以全班站起來一起跳，活絡氣氛又學均衡飲食。</p>
         <p class="src-line">衛生福利部國民健康署 · YouTube</p>
+        <div class="qline"><img src="qr/yt-tCGLwR9NbFo.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
       <a class="video" href="https://www.youtube.com/watch?v=nRwom6qTenk" target="_blank" rel="noopener" data-yt="nRwom6qTenk">
         <div class="frame"><img src="https://i.ytimg.com/vi/nRwom6qTenk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play"></span><span class="dur">2:15</span><span class="vtag new">最新研究</span></div>
         <h4>編織不只紓壓，還能降低失智風險</h4>
         <p>2026 年 10 月公視報導：手作編織刺激大腦活動，與較低的失智風險有關。</p>
         <p class="src-line">公視早安新聞 · YouTube</p>
+        <div class="qline"><img src="qr/yt-nRwom6qTenk.svg" alt="影片 QR Code" loading="lazy"><span>掃描觀看影片</span></div>
       </a>
     </div>
   </div>
@@ -1364,12 +1486,12 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
 
     <div class="sub reveal"><h3>求助管道</h3><span class="latin">Where to Get Help</span></div>
     <div class="res reveal">
-      <div class="r"><b>長照服務專線</b><div class="tel">1966</div><p>申請長照評估、居家服務、喘息服務、輔具與無障礙改善補助。</p><a class="go" href="https://1966.gov.tw/" target="_blank" rel="noopener">衛福部長照專區</a></div>
-      <div class="r"><b>失智症關懷專線</b><div class="tel">0800-474-580</div><p>台灣失智症協會提供照顧諮詢、情緒支持與資源轉介。</p><a class="go" href="https://www.tada2002.org.tw/" target="_blank" rel="noopener">台灣失智症協會</a></div>
+      <div class="r"><b>長照服務專線</b><div class="tel">1966</div><p>申請長照評估、居家服務、喘息服務、輔具與無障礙改善補助。</p><a class="go" href="https://1966.gov.tw/" target="_blank" rel="noopener">衛福部長照專區</a><div class="qline"><img src="qr/1966.svg" alt="QR Code" loading="lazy"><span>掃描開啟網站</span></div></div>
+      <div class="r"><b>失智症關懷專線</b><div class="tel">0800-474-580</div><p>台灣失智症協會提供照顧諮詢、情緒支持與資源轉介。</p><a class="go" href="https://www.tada2002.org.tw/" target="_blank" rel="noopener">台灣失智症協會</a><div class="qline"><img src="qr/tada.svg" alt="QR Code" loading="lazy"><span>掃描開啟網站</span></div></div>
       <div class="r"><b>走失報案</b><div class="tel">110</div><p>發現長輩走失立即報案，不需等待 24 小時。</p></div>
-      <div class="r"><b>失智共照中心與社區據點</b><p>各縣市設有失智共同照護中心協助確診與個案管理，社區據點提供認知促進、家屬支持團體。</p><a class="go" href="https://www.hpa.gov.tw/" target="_blank" rel="noopener">國民健康署</a></div>
+      <div class="r"><b>失智共照中心與社區據點</b><p>各縣市設有失智共同照護中心協助確診與個案管理，社區據點提供認知促進、家屬支持團體。</p><a class="go" href="https://www.hpa.gov.tw/" target="_blank" rel="noopener">國民健康署</a><div class="qline"><img src="qr/hpa.svg" alt="QR Code" loading="lazy"><span>掃描開啟網站</span></div></div>
       <div class="r"><b>桃園市政府衛生局</b><div class="tel">03-3340935</div><p>醫事管理科，本課程主辦單位。</p></div>
-      <div class="r"><b>愛的手鍊</b><p>由中華民國老人福利推動聯盟辦理的防走失手鍊，可洽各地社會局或長照管理中心。</p><a class="go" href="https://www.oldpeople.org.tw/" target="_blank" rel="noopener">老人福利推動聯盟</a></div>
+      <div class="r"><b>愛的手鍊</b><p>由中華民國老人福利推動聯盟辦理的防走失手鍊，可洽各地社會局或長照管理中心。</p><a class="go" href="https://www.oldpeople.org.tw/" target="_blank" rel="noopener">老人福利推動聯盟</a><div class="qline"><img src="qr/oldpeople.svg" alt="QR Code" loading="lazy"><span>掃描開啟網站</span></div></div>
     </div>
 
     <div class="sub reveal" id="library"><h3>教案資源庫</h3><span class="latin">Lesson Library by ADLers</span><span class="tag">愛迪樂 鍾孟修 職能治療師</span></div>
@@ -1676,7 +1798,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       ['taiwanfood2','台灣美食地圖・縣市小吃探險','依縣市探索小吃，適合引導長輩聊家鄉味。','飲食懷舊'],
     ]],
   ];
-  $('#lib').innerHTML=lib.map(([g,en,items])=>`<div class="lib-group reveal"><div class="lib-head"><h4>${g}</h4><span class="latin">${en}</span><span class="cnt">${items.length} 個資源</span></div><div class="lib">${items.map(([slug,t,d,u])=>`<a class="lc" href="${GH}${slug}/" target="_blank" rel="noopener"><div class="shot"><img src="shots/${slug}.jpg" alt="${t} 網頁截圖" loading="lazy"></div><h5>${t}</h5><p>${d}</p><p class="use">${u}</p></a>`).join('')}</div></div>`).join('');
+  $('#lib').innerHTML=lib.map(([g,en,items])=>`<div class="lib-group reveal"><div class="lib-head"><h4>${g}</h4><span class="latin">${en}</span><span class="cnt">${items.length} 個資源</span></div><div class="lib">${items.map(([slug,t,d,u])=>`<a class="lc" href="${GH}${slug}/" target="_blank" rel="noopener"><div class="shot"><img src="shots/${slug}.jpg" alt="${t} 網頁截圖" loading="lazy"></div><h5>${t}</h5><p>${d}</p><p class="use">${u}</p><div class="qline"><img src="qr/lib-${slug}.svg" alt="QR Code" loading="lazy"><span>掃描開啟教案</span></div></a>`).join('')}</div></div>`).join('');
 
 
   /* ── Video lightbox: only when opened as a standalone page; inside a framed viewer, links open YouTube ── */
