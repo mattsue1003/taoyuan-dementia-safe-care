@@ -2106,6 +2106,16 @@ html.present .ps-progress{display:block}
     if(e.key==='p'||e.key==='P'){setPresent(true);}
   });
 
+  /* ── QR codes outside a link become links to the same address ── */
+  const QRURL={'qr-site':'https://mattsue1003.github.io/taoyuan-dementia-safe-care/','qr-fanpage':'https://www.facebook.com/profile.php?id=100063748491881','health8':GH+'health-education-8/','sore-db':GH+'bodysoreproblemlearn/','1966':'https://1966.gov.tw/','tada':'https://www.tada2002.org.tw/','hpa':'https://www.hpa.gov.tw/','oldpeople':'https://www.oldpeople.org.tw/'};
+  $$('img[src*="qr"]').forEach(img=>{
+    if(img.closest('a'))return;
+    const n=(img.getAttribute('src').match(/([\w-]+)\.svg$/)||[])[1]; if(!n)return;
+    const u=QRURL[n]||(n.startsWith('lib-')?GH+n.slice(4)+'/':n.startsWith('yt-')?'https://www.youtube.com/watch?v='+n.slice(3):null); if(!u)return;
+    const a=document.createElement('a'); a.href=u; a.target='_blank'; a.rel='noopener'; a.setAttribute('aria-label',(img.alt||'QR Code')+'：開啟連結');
+    img.replaceWith(a); a.appendChild(img);
+  });
+
   /* ── Small-screen helpers ── */
   const tt=$('#toTop');
   addEventListener('scroll',()=>tt.classList.toggle('show',!isPresent()&&scrollY>innerHeight*1.5),{passive:true});
