@@ -411,6 +411,44 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
 .qline img{width:72px;height:72px;flex:none;padding:4px;background:#fff;border:1px solid var(--line);border-radius:3px;position:static;filter:none!important;transform:none!important}
 .qline span{font-size:12px;color:var(--ink-soft);letter-spacing:.06em}
 .r .qline{margin-top:12px}
+/* ── Presenter mode: one page at a time, fitted to the screen ── */
+html.present{--ink:#463E36;--ink-soft:#6B6157;--line:#CFC4B3;scroll-behavior:auto}
+html.present .ps-off{display:none!important}
+html.present .rail,html.present .kbd-tip,html.present footer,html.present .scroll-cue,html.present .to-top{display:none!important}
+html.present body{padding-bottom:0}
+html.present section.ch,html.present section.hero{min-height:calc(100svh - var(--bar-h,64px));display:flex;flex-direction:column;justify-content:center;border:0}
+html.present section.ch{padding-block:0}
+html.present section>.wrap{width:100%;max-width:1240px;padding-top:clamp(20px,3vh,44px);padding-bottom:clamp(76px,10vh,104px)}
+html.present section.hero>.wrap{padding-bottom:clamp(76px,10vh,104px)}
+html.present .reveal{animation:none!important;opacity:1!important;transform:none!important}
+html.present .sub{margin-top:0}
+html.present .ch-head{margin-bottom:28px}
+html.present .ps-cur{animation:ps-in .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes ps-in{from{opacity:.35;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pager{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:55;display:none;align-items:center;gap:4px;padding:5px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(80,66,52,.12);max-width:calc(100vw - 24px)}
+html.present .pager{display:flex}
+.pager button{border:0;background:transparent;min-width:44px;height:44px;border-radius:999px;cursor:pointer;color:var(--ink);font-size:20px;display:grid;place-items:center;padding:0 10px;transition:background .25s}
+.pager button:hover{background:var(--paper-2)}
+.pager button:disabled{opacity:.3;cursor:default;background:transparent}
+.pager .lbl{display:flex;flex-direction:column;align-items:center;line-height:1.25;padding:0 8px;min-width:0;max-width:min(46vw,420px)}
+.pager .lbl b{font-weight:500;font-size:13px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.pager .lbl small{font-size:11.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.pager .txt{font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
+.ps-progress{position:fixed;left:0;right:0;bottom:0;height:3px;z-index:56;display:none;background:transparent}
+html.present .ps-progress{display:block}
+.ps-progress i{display:block;height:100%;width:0;background:var(--clay);transition:width .4s}
+@media (max-width:560px){.pager .txt{display:none}.pager .lbl b{max-width:52vw}.pager .chap{display:none}}
+@media (hover:none){.kbd-tip{display:none}}
+
+/* ── Phone & small-screen comfort ── */
+.tbl-wrap.scrollable::before{content:"← 左右滑動看完整表格 →";position:sticky;left:0;display:block;font-size:12px;color:var(--ink-soft);letter-spacing:.08em;padding:0 0 6px}
+.tbl-wrap{-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.to-top{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--ink);font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s;box-shadow:0 4px 16px rgba(80,66,52,.10)}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+@media (max-width:560px){.chip-btn{padding:8px 14px}.bar .wrap{gap:8px}.brand-txt small{display:none}}
+@media (max-width:380px){.brand-txt b{font-size:14px;letter-spacing:.06em}}
+@media (max-width:560px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.gcard h4{font-size:16px;margin-top:10px}.gcard p{font-size:13.5px}.lib{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.lc h5{font-size:15px}.lc p{font-size:13px}.qline img{width:64px;height:64px}}
+@media (max-width:560px){table.cmp{min-width:600px;font-size:14px}.cmp th,.cmp td{padding:10px 9px}.cmp tr>:first-child{position:sticky;left:0;z-index:1;background:var(--paper);box-shadow:1px 0 0 var(--line)}section.alt .cmp tr>:first-child{background:var(--paper-2)}}
 </style>
 </head>
 <body>
@@ -423,7 +461,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       <span class="brand-txt"><b>失智照護 日和講堂</b><small>Dementia Care · Taoyuan</small></span>
     </a>
     <div class="bar-tools">
-      <span class="kbd-tip hide-sm"><kbd>←</kbd><kbd>→</kbd> 換章</span>
+      <span class="kbd-tip hide-sm"><kbd>←</kbd><kbd>→</kbd> 換章　<kbd>P</kbd> 投影</span>
       <button class="chip-btn" id="presentBtn" aria-pressed="false" type="button">投影模式</button>
       <button class="burger" id="menuBtn" aria-label="開啟章節選單" aria-expanded="false" type="button"><span></span></button>
     </div>
@@ -458,6 +496,17 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   <a href="#resources"><span>06 資源與測驗</span></a>
   <a href="#thanks"><span>謝謝・粉專</span></a>
 </nav>
+
+
+<div class="pager" id="pager" role="toolbar" aria-label="投影頁面控制">
+  <button type="button" id="psPrev" aria-label="上一頁">‹</button>
+  <div class="lbl" aria-live="polite"><b id="psTitle"></b><small id="psCount"></small></div>
+  <button type="button" id="psNext" aria-label="下一頁">›</button>
+  <button type="button" id="psFull" class="txt" aria-label="全螢幕">全螢幕</button>
+  <button type="button" id="psExit" class="txt" aria-label="結束投影模式">結束</button>
+</div>
+<div class="ps-progress" aria-hidden="true"><i id="psBar"></i></div>
+<button class="to-top" id="toTop" type="button" aria-label="回到頂端">↑</button>
 
 <!-- ───────── Hero ───────── -->
 <section class="hero" id="top">
@@ -534,7 +583,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       <a class="ag" href="#resources" data-s="16:25" data-e="16:35"><span class="t">16:25–16:35</span><span class="n">06</span><span class="x">資源與課後測驗<small>求助管道、六題小測驗、Q&amp;A</small></span><span class="now">進行中</span></a>
     </div>
 
-    <div class="info-row reveal">
+    <div class="info-row reveal" data-page="學習目標">
       <div><b>學習目標一</b><span class="muted small">能說出失智症與正常老化的差異，並運用十大警訊與 AD8 協助早期辨識。</span></div>
       <div><b>學習目標二</b><span class="muted small">能分辨譫妄、精神行為症狀等急慢性健康問題，知道何時需要就醫。</span></div>
       <div><b>學習目標三</b><span class="muted small">能評估居家與外出安全風險，並以尊重、復能的方式與長輩互動。</span></div>
@@ -563,7 +612,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       <p class="src">資料來源：內政部 105–114 年簡易生命表；衛生福利部社會及家庭署 2026 年百歲人瑞統計；衛福部 2025 年人瑞統計。</p>
     </div>
 
-    <div class="stats reveal">
+    <div class="stats reveal" data-page="台灣現況">
       <div class="stat"><div class="num">7.99<small>%</small></div><p>65 歲以上長者失智症盛行率，約每 12～13 位長者就有 1 位。</p></div>
       <div class="stat"><div class="num">17.53<small>%</small></div><p>65 歲以上輕度認知障礙（MCI）盛行率。這是介入、延緩的黃金時期。</p></div>
       <div class="stat"><div class="num">45<small>%</small></div><p>失智症風險可能與 14 項可改變的危險因子相關，預防是做得到的。</p></div>
@@ -1526,7 +1575,7 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   <div class="wrap">
     <div><b>失智症健康問題辨識與安全照護</b><br>桃園市政府衛生局 積分課程<br>2026.11.04　桃園市工業會 1202 教室</div>
     <div>本講義內容整理自衛生福利部、國民健康署、台灣失智症協會公開資料與相關文獻，僅供教育訓練使用，個別健康狀況請諮詢專業醫療人員。</div>
-    <div>影片版權屬各原發布單位所有，本頁僅提供連結。<br>上課操作：<kbd>←</kbd><kbd>→</kbd> 切換章節、「投影模式」放大字級。</div>
+    <div>影片版權屬各原發布單位所有，本頁僅提供連結。<br>上課操作：<kbd>←</kbd><kbd>→</kbd> 切換章節；按「投影模式」或 <kbd>P</kbd> 進入逐頁投影，<kbd>←</kbd><kbd>→</kbd> 或空白鍵翻頁、<kbd>F</kbd> 全螢幕、<kbd>Esc</kbd> 結束。手機可左右滑動翻頁。</div>
   </div>
 </footer>
 
@@ -1597,23 +1646,11 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
   mb.onclick=()=>setMenu(true); $('#menuClose').onclick=()=>setMenu(false);
   $$('.menu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
-  /* ── Presenter mode ── */
-  const pb=$('#presentBtn');
-  function setPresent(on){document.documentElement.classList.toggle('present',on);pb.setAttribute('aria-pressed',on);store.set('dc-present',on?'1':'0');}
-  pb.onclick=()=>setPresent(pb.getAttribute('aria-pressed')!=='true');
-  if(store.get('dc-present')==='1') setPresent(true);
-
   /* ── Chapter navigation (keyboard + rail) ── */
   const ids=['top','speaker','intro','understand','risk','recognize','health','safety','care','resources','thanks'];
   const secs=ids.map(id=>document.getElementById(id));
   function current(){let c=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.35)c=i});return c;}
   function go(i){i=Math.max(0,Math.min(secs.length-1,i));secs[i].scrollIntoView({behavior:reduce?'auto':'smooth'});}
-  addEventListener('keydown',e=>{
-    if(/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;
-    if(e.key==='Escape'){setMenu(false);closeLb();}
-    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current()+1);}
-    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current()-1);}
-  });
   const rail=$$('#rail a');
   function markRail(){const c=current();rail.forEach((a,i)=>a.classList.toggle('on',i===c));}
   addEventListener('scroll',markRail,{passive:true}); markRail();
@@ -1812,6 +1849,141 @@ kbd{font-family:var(--f-body);border:1px solid var(--line);border-bottom-width:2
       lb.classList.add('open');}));
   }
   $('#lbClose').onclick=closeLb; lb.onclick=e=>{if(e.target===lb)closeLb();};
+
+  /* ── Presenter mode: every chapter head, subsection and video row becomes one page ── */
+  const root=document.documentElement, pb=$('#presentBtn'), bar=$('#bar');
+  const allSecs=$$('body > section');
+  let slides=[], idx=0;
+  const isPresent=()=>root.classList.contains('present');
+  function setBarH(){root.style.setProperty('--bar-h',bar.offsetHeight+'px');}
+  function buildSlides(){
+    slides=[];
+    allSecs.forEach(sec=>{
+      const wrap=sec.querySelector(':scope > .wrap');
+      const chap=(sec.querySelector('.ch-head h2')||{}).textContent||'';
+      const no=(sec.querySelector('.ch-no')||{}).textContent||'';
+      if(!wrap||sec.classList.contains('hero')){slides.push({sec,wrap,nodes:null,title:'失智症健康問題辨識與安全照護',chap:'開場'});return;}
+      let cur=null;
+      [...wrap.children].forEach(el=>{
+        const isSub=el.classList.contains('sub'), isVid=el.classList.contains('videos'), pg=el.dataset.page;
+        if(!cur||isSub||isVid||pg){
+          const h=isSub?el.querySelector('h3'):null;
+          cur={sec,wrap,nodes:[],chap:(no?no+' ':'')+chap,title:h?h.textContent:pg?pg:(isVid?'影片':(chap||(sec.querySelector('h2,h3')||{}).textContent||''))};
+          slides.push(cur);
+        }
+        cur.nodes.push(el);
+      });
+    });
+  }
+  function fit(s){
+    if(!s.wrap)return;
+    s.wrap.style.zoom='';
+    if(innerWidth<900)return;
+    const availH=innerHeight-bar.offsetHeight-24, h=s.wrap.scrollHeight;
+    const zw=Math.min(1.7,(innerWidth*0.94)/1240), zh=availH/h;
+    const z=Math.max(Math.min(zw,zh),Math.min(zw,1.1));
+    s.wrap.style.zoom=z.toFixed(3);
+  }
+  function show(i){
+    i=Math.max(0,Math.min(slides.length-1,i)); idx=i;
+    const s=slides[i];
+    allSecs.forEach(x=>x.classList.toggle('ps-off',x!==s.sec));
+    if(s.wrap&&s.nodes)[...s.wrap.children].forEach(el=>el.classList.toggle('ps-off',!s.nodes.includes(el)));
+    fit(s); scrollTo(0,0);
+    const anim=s.wrap||s.sec; anim.classList.remove('ps-cur'); void anim.offsetWidth; anim.classList.add('ps-cur');
+    $('#psTitle').textContent=s.title; $('#psCount').innerHTML=`<span class="chap">${s.chap}　</span>${i+1} / ${slides.length}`;
+    $('#psBar').style.width=((i+1)/slides.length*100)+'%';
+    $('#psPrev').disabled=i===0; $('#psNext').disabled=i===slides.length-1&&atEnd();
+    store.set('dc-slide',String(i));
+  }
+  const atEnd=()=>innerHeight+scrollY>=root.scrollHeight-48;
+  function next(){ if(!atEnd()){scrollBy({top:innerHeight*0.75,behavior:reduce?'auto':'smooth'});return;} if(idx<slides.length-1)show(idx+1); }
+  function prev(){ if(scrollY>48){scrollBy({top:-innerHeight*0.75,behavior:reduce?'auto':'smooth'});return;} if(idx>0)show(idx-1); }
+  function slideOf(el){
+    for(let i=0;i<slides.length;i++){const s=slides[i];
+      if(!s.sec.contains(el))continue;
+      if(!s.nodes||el===s.sec||el===s.wrap)return i;
+      if(s.nodes.some(n=>n===el||n.contains(el)))return i;}
+    return -1;
+  }
+  function nearestSlide(){
+    let best=0;
+    slides.forEach((s,i)=>{const n=s.nodes?s.nodes[0]:s.sec;if(n.getBoundingClientRect().top<innerHeight*.4)best=i;});
+    return best;
+  }
+  function setPresent(on){
+    if(on===isPresent())return;
+    if(on){
+      buildSlides(); const start=nearestSlide();
+      root.classList.add('present'); setBarH(); show(start);
+    }else{
+      const s=slides[idx];
+      root.classList.remove('present');
+      $$('.ps-off').forEach(x=>x.classList.remove('ps-off'));
+      $$('section > .wrap').forEach(w=>w.style.zoom='');
+      if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen();
+      if(s)(s.nodes?s.nodes[0]:s.sec).scrollIntoView({behavior:'auto'});
+    }
+    pb.setAttribute('aria-pressed',on); pb.textContent=on?'結束投影':'投影模式';
+    store.set('dc-present',on?'1':'0');
+  }
+  pb.onclick=()=>setPresent(!isPresent());
+  $('#psExit').onclick=()=>setPresent(false);
+  $('#psNext').onclick=next; $('#psPrev').onclick=prev;
+  function toggleFull(){ if(document.fullscreenElement){document.exitFullscreen&&document.exitFullscreen();} else if(root.requestFullscreen){root.requestFullscreen().catch(()=>{});} }
+  $('#psFull').onclick=toggleFull;
+  if(!root.requestFullscreen)$('#psFull').hidden=true;
+  document.addEventListener('fullscreenchange',()=>{$('#psFull').textContent=document.fullscreenElement?'離開全螢幕':'全螢幕';});
+  addEventListener('resize',()=>{setBarH(); if(isPresent())fit(slides[idx]);});
+  // in presenter mode, in-page links jump to the page that holds the target
+  document.addEventListener('click',e=>{
+    if(!isPresent())return;
+    const a=e.target.closest('a[href^="#"]'); if(!a)return;
+    const t=document.getElementById(a.getAttribute('href').slice(1)); if(!t)return;
+    const i=slideOf(t); if(i<0)return;
+    e.preventDefault(); setMenu(false); show(i);
+  });
+  // swipe between pages on touch screens
+  let tx=null,ty=0;
+  addEventListener('touchstart',e=>{if(!isPresent()||e.touches.length>1||e.target.closest('.tbl-wrap,.lightbox,.menu'))return tx=null;tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+  addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4){dx<0?show(idx+1):show(idx-1);}},{passive:true});
+
+  /* ── Keyboard ── */
+  addEventListener('keydown',e=>{
+    if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)||e.metaKey||e.ctrlKey||e.altKey)return;
+    if(e.key==='Escape'){
+      if(menu.classList.contains('open'))return setMenu(false);
+      if(lb.classList.contains('open'))return closeLb();
+      if(isPresent()&&!document.fullscreenElement)return setPresent(false);
+      return;
+    }
+    if(menu.classList.contains('open')||lb.classList.contains('open'))return;
+    if(isPresent()){
+      const k=e.key;
+      if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '){e.preventDefault();next();}
+      else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();prev();}
+      else if(k==='Home'){e.preventDefault();show(0);}
+      else if(k==='End'){e.preventDefault();show(slides.length-1);}
+      else if(k==='f'||k==='F'){toggleFull();}
+      return;
+    }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current()+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current()-1);}
+    if(e.key==='p'||e.key==='P'){setPresent(true);}
+  });
+
+  /* ── Small-screen helpers ── */
+  const tt=$('#toTop');
+  addEventListener('scroll',()=>tt.classList.toggle('show',!isPresent()&&scrollY>innerHeight*1.5),{passive:true});
+  tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+  function markTables(){$$('.tbl-wrap').forEach(w=>w.classList.toggle('scrollable',w.scrollWidth>w.clientWidth+4));}
+  markTables(); addEventListener('resize',markTables);
+
+  setBarH();
+  const qp=new URLSearchParams(location.search).get('present');
+  if(qp!==null){setPresent(true);const k=parseInt(qp,10)-1;if(k>=0&&k<slides.length)show(k);}
+  else if(store.get('dc-present')==='1'){setPresent(true);const k=+store.get('dc-slide');if(k>=0&&k<slides.length)show(k);}
 })();
 </script>
 </body>
