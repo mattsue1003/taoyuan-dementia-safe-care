@@ -449,6 +449,20 @@ html.present .ps-progress{display:block}
 @media (max-width:380px){.brand-txt b{font-size:14px;letter-spacing:.06em}}
 @media (max-width:560px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.gcard h4{font-size:16px;margin-top:10px}.gcard p{font-size:13.5px}.lib{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.lc h5{font-size:15px}.lc p{font-size:13px}.qline img{width:64px;height:64px}}
 @media (max-width:560px){table.cmp{min-width:600px;font-size:14px}.cmp th,.cmp td{padding:10px 9px}.cmp tr>:first-child{position:sticky;left:0;z-index:1;background:var(--paper);box-shadow:1px 0 0 var(--line)}section.alt .cmp tr>:first-child{background:var(--paper-2)}}
+.ice .lc{max-width:420px}
+.tsy{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr);gap:18px}
+.tsy-g{display:grid;grid-template-columns:auto;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:10px;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px}
+.tsy-h{writing-mode:vertical-rl;font-family:var(--f-display);font-size:22px;letter-spacing:.3em;color:var(--clay);align-self:center;padding:0 4px}
+.tsy-g>div{display:grid;justify-items:center;text-align:center;gap:4px;padding:10px 4px}
+.tsy-g svg{width:40px;height:40px;color:var(--ink-soft)}
+.tsy-g:first-child svg{color:var(--rose)}
+.tsy-g b{font-family:var(--f-display);font-weight:500;font-size:17px;letter-spacing:.08em}
+.tsy-g span{font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+@media (max-width:860px){.tsy{grid-template-columns:1fr}}
+@media (max-width:480px){.tsy-g{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}.tsy-h{writing-mode:horizontal-tb;grid-column:1/-1;font-size:18px;letter-spacing:.2em}}
+.sts-art{width:100%;height:auto;display:block}
+.sts-fig{border-radius:6px;overflow:hidden}
+
 </style>
 </head>
 <body>
@@ -581,6 +595,21 @@ html.present .ps-progress{display:block}
       <a class="ag" href="#safety" data-s="15:25" data-e="16:05"><span class="t">15:25–16:05</span><span class="n">04</span><span class="x">安全照護<small>居家環境、防走失、用藥與用火安全</small></span><span class="now">進行中</span></a>
       <a class="ag" href="#care" data-s="16:05" data-e="16:25"><span class="t">16:05–16:25</span><span class="n">05</span><span class="x">溝通・復能・預防<small>情境演練、提示階梯、趨吉避凶</small></span><span class="now">進行中</span></a>
       <a class="ag" href="#resources" data-s="16:25" data-e="16:35"><span class="t">16:25–16:35</span><span class="n">06</span><span class="x">資源與課後測驗<small>求助管道、六題小測驗、Q&amp;A</small></span><span class="now">進行中</span></a>
+    </div>
+
+    <div class="sub reveal"><h3>破冰：金曲猜歌</h3><span class="latin">Ice-breaker</span><span class="tag">13:00 開場暖身</span></div>
+    <div class="split reveal ice">
+      <a class="lc" href="https://mattsue1003.github.io/old-song-guess/" target="_blank" rel="noopener"><div class="shot"><img src="shots/old-song-guess.jpg" alt="金曲猜歌 20 題 網頁截圖" loading="lazy"></div><h5>金曲猜歌 20 題</h5><p>播一小段前奏，大家搶答歌名與歌手。</p></a>
+      <div class="prose">
+        <p class="big-q" style="font-size:clamp(19px,2.2vw,23px)">先唱一首<em>長輩年輕時的歌</em>，再開始上課。</p>
+        <p style="margin-top:14px">音樂是失智長輩最晚失去的記憶之一。今天先用照顧者自己的耳朵體驗：一聽到前奏，那個年代的畫面就回來了。回去帶長輩時，同一套題目就能直接用。</p>
+        <ul style="margin:14px 0 0;padding-left:1.1em;display:grid;gap:6px;font-size:15px">
+          <li>分組搶答，答對的組別加分</li>
+          <li>追問一句：「這首歌讓你想起什麼？」</li>
+          <li>帶長輩時不比快，跟著哼就算答對</li>
+        </ul>
+        <div class="qr" style="margin-top:18px"><img src="qr/lib-old-song-guess.svg" alt="金曲猜歌 QR Code"><div><b>掃描開啟金曲猜歌</b><span>mattsue1003.github.io/old-song-guess</span></div></div>
+      </div>
     </div>
 
     <div class="info-row reveal" data-page="學習目標">
@@ -1043,6 +1072,28 @@ html.present .ps-progress{display:block}
       <li><b>評估 Evaluate</b><p>試行後追蹤是否改善，無效再調整，必要時才考慮藥物。</p></li>
     </ol>
     <p class="src">DICE：Kales, Gitlin &amp; Lyketsos, BMJ 2015。</p>
+
+    <div class="sub reveal"><h3>BPSD：哪種方法最有效？</h3><span class="latin">What Works for BPSD</span></div>
+    <p class="big-q reveal">高品質研究的共同結論：<em>先找原因、非藥物優先</em>，藥物是最後的安全網，不是第一步。</p>
+    <div class="tbl-wrap reveal" style="margin-top:24px">
+      <table class="cmp">
+        <thead><tr><th>方法</th><th>研究怎麼說</th><th>效果</th><th>怎麼做</th></tr></thead>
+        <tbody>
+          <tr><th>找原因：先處理疼痛</th><td>挪威護理之家隨機試驗（352 人）：依步驟給止痛藥 8 週，<b>躁動減少約 17%</b>，整體精神行為症狀也下降</td><td>高</td><td>用 PAINAD 觀察疼痛；同時查便秘、感染、睡眠、藥物（DICE）</td></tr>
+          <tr><th>照顧者訓練＋多元介入</th><td>統合分析 23 個試驗：家屬執行的非藥物介入，效果量 0.34，<b>至少與藥物相當</b>，家屬的壓力反應也下降</td><td>高</td><td>約 9–12 次、3–6 個月到宅指導；依長輩與家屬量身訂做</td></tr>
+          <tr><th>多專業照護、按摩與觸摸、音樂＋觸摸</th><td>網絡統合分析（163 個試驗、23,143 人）：這三種<b>都比一般照護更能減少攻擊與躁動</b>，且非藥物整體比藥物更有效</td><td>中到高</td><td>手部按摩、溫和觸摸配上熟悉的老歌；團隊定期討論個案</td></tr>
+          <tr><th>量身活動、戶外與休閒</th><td>休閒活動在統計上有效但幅度小；依長輩能力與興趣設計的活動（TAP）可減少行為問題</td><td>中</td><td>摺衣服、園藝、整理、散步：有角色、有成功經驗</td></tr>
+          <tr><th>環境調整</th><td>多作為綜合方案的一部分；單獨研究結果不一</td><td>中</td><td>降低噪音、充足光線、可安全走動的空間、熟悉的物品</td></tr>
+          <tr><th>藥物</th><td>抗精神病藥物效果小，且增加<b>中風與死亡風險</b>（約 1.6–1.7 倍）；許多人可在醫師指導下逐步減藥</td><td>小，有風險</td><td>只用在嚴重攻擊、危及安全或嚴重精神病症狀；最低劑量、短期、6–12 週重新評估</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>所以最好的方法是？ <span class="latin">Bottom Line</span></h4><ul><li>沒有單一最好的方法，<b>個別化、找原因、多元組合</b>最有效</li><li>最常被忽略的原因是<b>疼痛</b></li><li>照顧者學會方法，效果才會留在家裡</li></ul></div>
+      <div class="blk"><h4>溝通上 <span class="latin">Communication</span></h4><ul><li>接納情緒，不爭辯事實</li><li>轉移注意：換個地方、換件事做</li><li>給他一個角色與選擇，降低失控感</li></ul></div>
+      <div class="blk"><h4>用藥上 <span class="latin">Medicines</span></h4><ul><li>路易氏體失智對抗精神病藥物特別敏感</li><li>每次回診問：「這個藥還需要嗎？」</li><li>躁動先排除藥物副作用，例如抗膽鹼藥</li></ul></div>
+    </div>
+    <p class="src reveal">Watt JA, et al. Ann Intern Med 2019（網絡統合分析）；Brodaty H, Arasaratnam C. Am J Psychiatry 2012；Husebo BS, et al. BMJ 2011；Gitlin LN, et al. Am J Geriatr Psychiatry 2008（TAP）；Van Leeuwen E, et al. Cochrane 2018（抗精神病藥物停藥）。</p>
   </div>
 </section>
 
@@ -1350,6 +1401,88 @@ html.present .ps-progress{display:block}
         <p>把目標放在長輩自己在意的事：想自己吃飯、想去市場、想照顧盆栽。把這些事拆成小步驟，每天的生活就是訓練。</p>
       </div>
     </div>
+
+    <div class="sub reveal"><h3>自立支援「三不四要」× 失智復能</h3><span class="latin">Self-reliance Care &amp; Reablement</span></div>
+    <div class="tsy reveal">
+      <div class="tsy-g"><span class="tsy-h">三不</span>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 30c0-6 4-10 10-10s10 4 10 10" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 38l28-28" stroke="currentColor" stroke-width="2.4"/></svg><b>不約束</b><span>改用陪伴、感應器</span></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 18h24l-3 18H15z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 38l28-28" stroke="currentColor" stroke-width="2.4"/></svg><b>不包尿布</b><span>定時引導如廁</span></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32M10 30v8M38 30v8M10 24h10" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 38l28-28" stroke="currentColor" stroke-width="2.4"/></svg><b>不臥床</b><span>白天起身、出房門</span></div>
+      </div>
+      <div class="tsy-g"><span class="tsy-h">四要</span>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8c6 9 10 14 10 20a10 10 0 0 1-20 0c0-6 4-11 10-20z" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><b>要喝水</b><span>約 1500 cc（依病況調整）</span></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 26h28a14 14 0 0 1-28 0zM18 18c0-4 4-4 4-8M26 18c0-4 4-4 4-8" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><b>要營養</b><span>約 1500 大卡、足夠蛋白質</span></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="13" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 16v8l6 4" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><b>要排便</b><span>規律、自然排便</span></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="26" cy="10" r="4" fill="currentColor"/><path d="M24 16l-4 12 8 6v8M20 28l-6 12M22 20l-8 4M26 20l8 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>要運動</b><span>每天 15–30 分鐘、多走路</span></div>
+      </div>
+    </div>
+    <div class="tbl-wrap reveal" style="margin-top:28px">
+      <table class="cmp">
+        <thead><tr><th></th><th>自立支援「三不四要」</th><th>失智復能</th></tr></thead>
+        <tbody>
+          <tr><th>出發點</th><td>源自日本，從身體基本需求切入：水分、營養、排便、活動顧好，意識與體力就會回來</td><td>以人為中心，從「長輩想做什麼」切入，訂生活目標</td></tr>
+          <tr><th>強項</th><td>規則簡單、全體人員都能執行；改變「幫他做」的照顧文化；減少約束、尿布與臥床</td><td>個別化；有環境調整、輔具、提示策略與跨專業團隊；國際實證較多</td></tr>
+          <tr><th>對失智的幫助</th><td>脫水、便秘、營養不良都是<b>譫妄與躁動</b>的常見原因；不約束能減少躁動與受傷</td><td>補上失智特有的需要：記憶與判斷退化時，用環境與策略讓他「做得到」</td></tr>
+          <tr><th>要注意</th><td>國際隨機試驗較少；1500 cc 不適合心衰竭、腎病患者；中重度長輩不會主動喝水、如廁，需要提示</td><td>需要專業評估與時間；只靠治療師、沒有日常照顧者執行就沒效</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>四要當地基 <span class="latin">Foundation</span></h4><ul><li>先把水分、營養、排便、活動顧好，再談訓練</li><li>行為突然變差，先檢查四要有沒有做到</li><li>喝水用他喜歡的杯子、固定時間、一起喝</li></ul></div>
+      <div class="blk"><h4>三不用失智的方法做 <span class="latin">Adapt</span></h4><ul><li>不包尿布：看出如廁訊號、定時引導、廁所門貼圖卡</li><li>不約束：離床感應墊、低床、陪伴取代綁</li><li>不臥床：白天排有角色的活動，晚上才睡得好</li></ul></div>
+      <div class="blk"><h4>復能補上目標與策略 <span class="latin">Add</span></h4><ul><li>用他在意的事當動機：去市場、照顧孫子</li><li>步驟拆解、提示階梯、無錯誤學習</li><li>環境與輔具讓他自己完成</li></ul></div>
+    </div>
+    <p class="note reveal"><b>一句話</b>　三不四要讓身體「有本錢」，復能讓長輩「有目標、有方法」。兩者合在一起，才是失智長輩的自立支援。</p>
+    <p class="src reveal">自立支援照顧（竹內孝仁）在台推廣資料；Metzelthin SF, et al. Ageing &amp; Society 2022（復能定義）。水分與熱量目標請依醫師評估個別調整。</p>
+
+    <div class="sub reveal"><h3>坐站練習（Sit to Stand）：每天最值得做的一個動作</h3><span class="latin">Sit-to-Stand</span></div>
+    <div class="split reveal">
+      <figure class="pic-fig sts-fig"><svg class="sts-art" viewBox="0 0 720 260" role="img" aria-label="坐站動作四步驟：坐好、身體前傾、站起、站穩">
+  <rect width="720" height="260" fill="#EDE5D8" rx="6"/>
+  <g fill="none" stroke="#A99A86" stroke-width="3" stroke-linecap="round">
+    <path d="M40 222h640"/>
+  </g>
+  <g stroke="#B9A48C" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M58 150h62M118 150v72M60 150v72M118 150V92"/>
+    <path d="M233 150h62M293 150v72M235 150v72M293 150V92"/>
+    <path d="M408 150h62M468 150v72M410 150v72M468 150V92"/>
+    <path d="M583 150h62M643 150v72M585 150v72M643 150V92"/>
+  </g>
+  <g stroke="#5F564D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M100 98v48h-40v74"/><path d="M100 112l-26 24"/>
+    <path d="M262 108l14 40h-44v72"/><path d="M262 118l-28 18"/>
+    <path d="M430 92l6 40-8 30 4 58"/><path d="M432 108l-22 26"/>
+    <path d="M610 72v70l-4 78"/><path d="M610 92l-14 36"/>
+  </g>
+  <g fill="#C3A78C"><circle cx="100" cy="80" r="15"/><circle cx="254" cy="92" r="15"/><circle cx="426" cy="76" r="15"/><circle cx="610" cy="56" r="15"/></g>
+  <g font-family="Noto Sans TC, sans-serif" font-size="17" fill="#5F564D" text-anchor="middle">
+    <text x="90" y="248">① 坐到椅子前半</text><text x="265" y="248">② 鼻子過腳尖</text><text x="440" y="248">③ 腳踩地站起</text><text x="614" y="248">④ 站穩再慢慢坐</text>
+  </g>
+</svg></figure>
+      <div class="prose">
+        <p class="big-q" style="font-size:clamp(19px,2.2vw,23px)">能從椅子站起來，就能<em>自己上廁所、自己下床、自己出門</em>。</p>
+        <p style="margin-top:14px">坐站是生活裡最常用的動作，一天要做幾十次。它同時練大腿肌力、平衡與轉位，而且<b>不用器材、不用學新東西</b>，把它放進每天的照顧流程就好，非常適合失智長輩。</p>
+      </div>
+    </div>
+    <div class="tbl-wrap reveal" style="margin-top:28px">
+      <table class="cmp">
+        <thead><tr><th>研究</th><th>對象與做法</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><th>加拿大 MOVE 研究（2015）</th><td>7 家護理之家、111 位失智住民；照服員在日常照顧中，每天提醒長輩重複坐站</td><td>6 個月後，坐站能力<b>維持住</b>，日常功能退化<b>比對照組慢</b></td></tr>
+          <tr><th>德國隨機試驗（2017）</th><td>97 位輕中度失智者，10 週學習代償式坐站技巧</td><td>失智者<b>學得會、記得住</b>，3 個月後仍保留；動作學習能力仍在</td></tr>
+          <tr><th>系統性回顧（2018）</th><td>43 個試驗、MCI 與失智者的監督式運動</td><td>30 秒坐站<b>多 2 次</b>，步行速度、平衡、起身行走時間都進步</td></tr>
+          <tr><th>巴西居家試驗（2021）</th><td>40 位輕中度阿茲海默症，16 週居家漸進運動</td><td>五次坐站變快，<b>跌倒風險下降</b>；對照組功能變差</td></tr>
+          <tr><th>澳洲 Sunbeam（2022）</th><td>護理之家認知障礙住民，漸進式肌力與平衡訓練</td><td><b>跌倒率減少 50%</b>，坐站與平衡較好</td></tr>
+          <tr><th>瑞典護理之家（2020）</th><td>每天 4 次坐站＋營養補充 12 週</td><td>整體未達顯著；但<b>規律做到的人</b>維持或進步的機會高 3.5 倍：關鍵是持續</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols reveal" style="margin-top:28px">
+      <div class="blk"><h4>放進日常 <span class="latin">Embed</span></h4><ul><li>每次上廁所、吃飯前、看電視廣告時，起立坐下 5 次</li><li>一天累積 3–4 回，比一週上一次課有效</li><li>邊數數或邊唱一首熟悉的歌</li></ul></div>
+      <div class="blk"><h4>口訣與提示 <span class="latin">Cue</span></h4><ul><li>「屁股往前、腳往後、鼻子過腳尖、站起來」</li><li>用提示階梯：先等、再說、再比、再示範</li><li>進階：手扶扶手 → 不扶 → 手抱胸 → 慢慢坐下</li></ul></div>
+      <div class="blk"><h4>安全 <span class="latin">Safety</span></h4><ul><li>椅子穩固、有扶手、不會滑動</li><li>站起來先停 3 秒，預防頭暈</li><li>關節痛、喘、頭暈就休息，照顧者站在旁邊</li></ul></div>
+    </div>
+    <p class="src reveal">Slaughter SE, et al. J Am Med Dir Assoc 2015；Werner C, et al. J Alzheimers Dis 2017；Lam FMH, et al. J Physiother 2018；Cezar NOC, et al. Arch Gerontol Geriatr 2021；Mak A, et al. J Am Med Dir Assoc 2022；Grönstedt H, et al. J Am Med Dir Assoc 2020。</p>
 
     <div class="sub reveal"><h3>健康促進：比預防疾病更積極</h3><span class="latin">Health Promotion</span></div>
     <div class="faq reveal">
